@@ -9,6 +9,16 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
+import os
+import sys
+import django
+
+
+sys.path.append('/vagrant/book_seller/')
+os.environ['DJANGO_SETTINGS_MODULE'] = 'book_seller.settings.prod'
+
+django.setup()
+
 BOT_NAME = 'justbookcrawler'
 
 SPIDER_MODULES = ['justbookcrawler.spiders']

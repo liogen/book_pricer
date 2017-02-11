@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello world</title>
+</head>
+<body>
+    <h1>Enter your ISBN</h1>
+    <form action="/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit" />
+    </form>
+
+    {% if isbn %}
+        <p>You ISBN: {{ isbn }}</p>
+    {% endif %}
+</body>
+</html>

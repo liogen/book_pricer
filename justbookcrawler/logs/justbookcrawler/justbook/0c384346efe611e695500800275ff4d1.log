@@ -1,0 +1,264 @@
+2017-02-10 23:10:04 [scrapy.utils.log] INFO: Scrapy 1.3.1 started (bot: justbookcrawler)
+2017-02-10 23:10:04 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'justbookcrawler', 'NEWSPIDER_MODULE': 'justbookcrawler.spiders', 'SPIDER_MODULES': ['justbookcrawler.spiders'], 'LOG_FILE': 'logs/justbookcrawler/justbook/0c384346efe611e695500800275ff4d1.log'}
+2017-02-10 23:10:04 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2017-02-10 23:10:04 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-02-10 23:10:04 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-02-10 23:10:04 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2017-02-10 23:10:04 [scrapy.core.engine] INFO: Spider opened
+2017-02-10 23:10:04 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-02-10 23:10:04 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2017-02-10 23:10:05 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://blog.scrapinghub.com> (referer: None)
+2017-02-10 23:10:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com>
+{'title': 'Looking Back at 2016'}
+2017-02-10 23:10:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com>
+{'title': 'How to Increase Sales with Online Reputation Management'}
+2017-02-10 23:10:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com>
+{'title': 'How to Build your own Price Monitoring Tool'}
+2017-02-10 23:10:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com>
+{'title': 'How You Can Use Web Data to Accelerate Your Startup'}
+2017-02-10 23:10:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com>
+{'title': 'An Introduction to XPath: How to Get Started'}
+2017-02-10 23:10:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com>
+{'title': 'Why Promoting Open Data Increases Economic Opportunities'}
+2017-02-10 23:10:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com>
+{'title': 'Interview: How Up Hail uses Scrapy to Increase Transparency'}
+2017-02-10 23:10:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com>
+{'title': 'How to Run Python Scripts in Scrapy Cloud'}
+2017-02-10 23:10:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com>
+{'title': 'Embracing the Future of Work: How To Communicate Remotely'}
+2017-02-10 23:10:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com>
+{'title': 'How to Deploy Custom Docker Images for Your Web Crawlers'}
+2017-02-10 23:10:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://blog.scrapinghub.com/page/2/> (referer: https://blog.scrapinghub.com)
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/2/>
+{'title': 'Improved Frontera: Web Crawling at Scale with Python 3 Support'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/2/>
+{'title': 'How to Crawl the Web Politely with Scrapy'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/2/>
+{'title': 'Introducing Scrapy Cloud with Python 3 Support'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/2/>
+{'title': 'What the Suicide Squad Tells Us About Web Data'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/2/>
+{'title': 'This Month in Open Source at Scrapinghub August 2016'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/2/>
+{'title': 'Meet Parsel: the Selector Library behind Scrapy'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/2/>
+{'title': 'Incremental Crawls with Scrapy and DeltaFetch'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/2/>
+{'title': 'Improving Access to Peruvian Congress Bills with Scrapy'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/2/>
+{'title': 'Scrapely: The Brains Behind Portia Spiders'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/2/>
+{'title': 'Introducing Portia2Code: Portia Projects into Scrapy Spiders'}
+2017-02-10 23:10:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://blog.scrapinghub.com/page/3/> (referer: https://blog.scrapinghub.com/page/2/)
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/3/>
+{'title': 'Scraping Infinite Scrolling Pages'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/3/>
+{'title': 'This Month in Open Source at Scrapinghub June 2016'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/3/>
+{'title': 'Introducing the Datasets Catalog'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/3/>
+{'title': 'Introducing the Crawlera Dashboard'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/3/>
+{'title': 'Data Extraction with Scrapy and Python 3'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/3/>
+{'title': 'How to Debug your Scrapy Spiders'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/3/>
+{'title': 'Scrapy + MonkeyLearn: Textual Analysis of Web Data'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/3/>
+{'title': 'Introducing Scrapy Cloud 2.0'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/3/>
+{'title': 'A (not so) Short Story on Getting Decent Internet Access'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/3/>
+{'title': 'Scraping Websites Based on ViewStates with Scrapy'}
+2017-02-10 23:10:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://blog.scrapinghub.com/page/4/> (referer: https://blog.scrapinghub.com/page/3/)
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/4/>
+{'title': 'Machine Learning with Web Scraping: New MonkeyLearn Addon'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/4/>
+{'title': 'Mapping Corruption in the Panama Papers with Open Data'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/4/>
+{'title': 'Web Scraping to Create Open Data'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/4/>
+{'title': 'Scrapy Tips from the Pros: March 2016 Edition'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/4/>
+{'title': 'This Month in Open Source at Scrapinghub March 2016'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/4/>
+{'title': 'Join Scrapinghub for Google Summer of Code 2016'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/4/>
+{'title': 'How Web Scraping is Revealing Lobbying and Corruption in Peru'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/4/>
+{'title': 'Splash 2.0 Is Here with Qt 5 and Python 3'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/4/>
+{'title': 'Migrate your Kimono Projects to Portia'}
+2017-02-10 23:10:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/4/>
+{'title': 'Scrapy Tips from the Pros: February 2016 Edition'}
+2017-02-10 23:10:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://blog.scrapinghub.com/page/5/> (referer: https://blog.scrapinghub.com/page/4/)
+2017-02-10 23:10:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/5/>
+{'title': 'Portia: The Open Source Alternative to Kimono Labs'}
+2017-02-10 23:10:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/5/>
+{'title': 'Web Scraping Finds Stores Guilty of Price Inflation'}
+2017-02-10 23:10:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/5/>
+{'title': 'Python 3 is Coming to Scrapy'}
+2017-02-10 23:10:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/5/>
+{'title': 'Happy Anniversary: Scrapinghub Turns 5'}
+2017-02-10 23:10:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/5/>
+{'title': 'Scrapy Tips from the Pros: Part 1'}
+2017-02-10 23:10:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/5/>
+{'title': 'Vizlegal: Rise of Machine-Readable Laws and Court Judgments'}
+2017-02-10 23:10:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/5/>
+{'title': 'Christmas Eve vs New Year’s Eve: Last Minute Price Inflation?'}
+2017-02-10 23:10:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/5/>
+{'title': 'Looking Back at 2015'}
+2017-02-10 23:10:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/5/>
+{'title': 'Winter Sales Showdown: Black Friday vs Cyber Monday vs Green Monday'}
+2017-02-10 23:10:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/5/>
+{'title': 'Chats With RINAR Solutions'}
+2017-02-10 23:10:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://blog.scrapinghub.com/page/6/> (referer: https://blog.scrapinghub.com/page/5/)
+2017-02-10 23:10:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/6/>
+{'title': 'Black Friday, Cyber Monday: Are They Worth It?'}
+2017-02-10 23:10:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/6/>
+{'title': 'Tips for Creating a Cohesive Company Culture Remotely'}
+2017-02-10 23:10:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/6/>
+{'title': 'Parse Natural Language Dates with Dateparser'}
+2017-02-10 23:10:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/6/>
+{'title': 'Aduana: Link Analysis to Crawl the Web at Scale'}
+2017-02-10 23:10:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/6/>
+{'title': 'Scrapy on the Road to Python 3 Support'}
+2017-02-10 23:10:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/6/>
+{'title': 'Introducing Javascript support for Portia'}
+2017-02-10 23:10:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/6/>
+{'title': 'Distributed Frontera: Web Crawling at Scale'}
+2017-02-10 23:10:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/6/>
+{'title': 'The Road to Loading JavaScript in Portia'}
+2017-02-10 23:10:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/6/>
+{'title': 'EuroPython 2015'}
+2017-02-10 23:10:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/6/>
+{'title': 'StartupChats Remote Working Q&A'}
+2017-02-10 23:10:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://blog.scrapinghub.com/page/7/> (referer: https://blog.scrapinghub.com/page/6/)
+2017-02-10 23:10:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/7/>
+{'title': 'PyCon Philippines 2015'}
+2017-02-10 23:10:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/7/>
+{'title': 'Google Summer of Code 2015'}
+2017-02-10 23:10:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/7/>
+{'title': 'Link Analysis Algorithms Explained'}
+2017-02-10 23:10:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/7/>
+{'title': 'EuroPython, here we go!'}
+2017-02-10 23:10:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/7/>
+{'title': 'Using git to manage vacations in a large distributed team'}
+2017-02-10 23:10:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/7/>
+{'title': 'Gender Inequality Across Programming Languages'}
+2017-02-10 23:10:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/7/>
+{'title': 'Traveling Tips for Remote Workers'}
+2017-02-10 23:10:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/7/>
+{'title': 'A Career in Remote Working'}
+2017-02-10 23:10:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/7/>
+{'title': 'Frontera: The Brain Behind the Crawls'}
+2017-02-10 23:10:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/7/>
+{'title': 'Scrape Data Visually with Portia and Scrapy Cloud'}
+2017-02-10 23:10:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://blog.scrapinghub.com/page/8/> (referer: https://blog.scrapinghub.com/page/7/)
+2017-02-10 23:10:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/8/>
+{'title': 'Scrapinghub: A Remote Working Success Story'}
+2017-02-10 23:10:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/8/>
+{'title': 'Why we moved to Slack'}
+2017-02-10 23:10:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/8/>
+{'title': 'The History of Scrapinghub'}
+2017-02-10 23:10:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/8/>
+{'title': 'Skinfer: A Tool for Inferring JSON Schemas'}
+2017-02-10 23:10:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/8/>
+{'title': 'Handling JavaScript in Scrapy with Splash'}
+2017-02-10 23:10:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/8/>
+{'title': 'Scrapinghub Crawls the Deep Web'}
+2017-02-10 23:10:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/8/>
+{'title': 'New Changes to Our Scrapy Cloud Platform'}
+2017-02-10 23:10:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/8/>
+{'title': 'Introducing ScrapyRT: An API for Scrapy spiders'}
+2017-02-10 23:10:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/8/>
+{'title': 'Looking Back at 2014'}
+2017-02-10 23:10:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/8/>
+{'title': 'XPath Tips from the Web Scraping Trenches'}
+2017-02-10 23:10:09 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://blog.scrapinghub.com/page/9/> (referer: https://blog.scrapinghub.com/page/8/)
+2017-02-10 23:10:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/9/>
+{'title': 'Introducing Data Reviews'}
+2017-02-10 23:10:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/9/>
+{'title': 'Extracting schema.org Microdata Using Scrapy Selectors and XPath'}
+2017-02-10 23:10:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/9/>
+{'title': 'Announcing Portia, the Open Source Visual Web Scraper!'}
+2017-02-10 23:10:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/9/>
+{'title': 'Optimizing Memory Usage of Scikit-Learn Models Using Succinct Tries'}
+2017-02-10 23:10:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/9/>
+{'title': 'Open Source at Scrapinghub'}
+2017-02-10 23:10:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/9/>
+{'title': 'Looking Back at 2013'}
+2017-02-10 23:10:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/9/>
+{'title': 'Marcos Campal Is a ScrapingHubber!'}
+2017-02-10 23:10:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/9/>
+{'title': 'Introducing Dash'}
+2017-02-10 23:10:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/9/>
+{'title': 'Why MongoDB Is a Bad Choice for Storing Our Scraped Data'}
+2017-02-10 23:10:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/9/>
+{'title': 'Introducing Crawlera, a Smart Page Downloader'}
+2017-02-10 23:10:10 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://blog.scrapinghub.com/page/10/> (referer: https://blog.scrapinghub.com/page/9/)
+2017-02-10 23:10:10 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/10/>
+{'title': 'Git Workflow for Scrapy Projects'}
+2017-02-10 23:10:10 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/10/>
+{'title': 'How to Fill Login Forms Automatically'}
+2017-02-10 23:10:10 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/10/>
+{'title': 'Spiders activity graphs'}
+2017-02-10 23:10:10 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/10/>
+{'title': 'Finding Similar Items'}
+2017-02-10 23:10:10 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/10/>
+{'title': 'Scrapy 0.15 dropping support for Python 2.5'}
+2017-02-10 23:10:10 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/10/>
+{'title': 'Autoscraping casts a wider net'}
+2017-02-10 23:10:10 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/10/>
+{'title': 'Scrapy 0.14 released'}
+2017-02-10 23:10:10 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/10/>
+{'title': 'Dirbot – a new example Scrapy project'}
+2017-02-10 23:10:10 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/10/>
+{'title': 'Introducing w3lib and scrapely'}
+2017-02-10 23:10:10 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/10/>
+{'title': 'Scrapy 0.12 released'}
+2017-02-10 23:10:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://blog.scrapinghub.com/page/11/> (referer: https://blog.scrapinghub.com/page/10/)
+2017-02-10 23:10:11 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/11/>
+{'title': 'Spoofing your Scrapy bot IP using tsocks'}
+2017-02-10 23:10:11 [scrapy.core.scraper] DEBUG: Scraped from <200 https://blog.scrapinghub.com/page/11/>
+{'title': 'Hello, world'}
+2017-02-10 23:10:11 [scrapy.core.engine] INFO: Closing spider (finished)
+2017-02-10 23:10:11 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 2933,
+ 'downloader/request_count': 11,
+ 'downloader/request_method_count/GET': 11,
+ 'downloader/response_bytes': 122986,
+ 'downloader/response_count': 11,
+ 'downloader/response_status_count/200': 11,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 2, 10, 23, 10, 11, 271644),
+ 'item_scraped_count': 102,
+ 'log_count/DEBUG': 114,
+ 'log_count/INFO': 7,
+ 'request_depth_max': 10,
+ 'response_received_count': 11,
+ 'scheduler/dequeued': 11,
+ 'scheduler/dequeued/memory': 11,
+ 'scheduler/enqueued': 11,
+ 'scheduler/enqueued/memory': 11,
+ 'start_time': datetime.datetime(2017, 2, 10, 23, 10, 4, 871191)}
+2017-02-10 23:10:11 [scrapy.core.engine] INFO: Spider closed (finished)

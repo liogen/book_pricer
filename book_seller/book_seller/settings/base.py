@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'just_book',
+    'crawler',
 ]
 
 MIDDLEWARE = [
@@ -120,7 +121,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Logging
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Logging
 
 LOGGER_NAME = "book_seller"
 LOG_BASE_FOLDER = "/var/log/%s" % LOGGER_NAME

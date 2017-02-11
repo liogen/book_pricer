@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from crawler.views import CrawlerView
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', CrawlerView.as_view()),
 ]

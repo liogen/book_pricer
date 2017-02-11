@@ -1,0 +1,686 @@
+2017-02-11 01:31:54 [scrapy.utils.log] INFO: Scrapy 1.3.1 started (bot: justbookcrawler)
+2017-02-11 01:31:54 [scrapy.utils.log] INFO: Overridden settings: {'LOG_FILE': 'logs/justbookcrawler/justbook/ddf9158ceff911e695500800275ff4d1.log', 'BOT_NAME': 'justbookcrawler', 'NEWSPIDER_MODULE': 'justbookcrawler.spiders', 'SPIDER_MODULES': ['justbookcrawler.spiders']}
+2017-02-11 01:31:54 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole']
+2017-02-11 01:31:54 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-02-11 01:31:54 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-02-11 01:31:54 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2017-02-11 01:31:54 [scrapy.core.engine] INFO: Spider opened
+2017-02-11 01:31:54 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-02-11 01:31:54 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2017-02-11 01:31:58 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp> (referer: None)
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€9.29'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€10.61'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€12.42'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€12.90'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€12.90'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€12.90'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€12.90'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€12.90'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€12.90'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€17.13'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€16.75'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€17.03'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€17.20'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€17.63'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€19.75'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€33.00'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€6.61'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€6.67'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€7.85'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€7.91'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€8.29'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€8.29'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€8.91'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€8.97'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€11.90'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€11.90'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€12.64'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€13.65'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€16.17'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€16.25'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€19.33'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€20.43'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€20.44'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€20.00'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€23.70'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€22.89'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€23.14'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€23.80'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€25.20'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€24.15'}
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'price': '€25.11'}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': '0',
+ 'country': 'Etats-Unis',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                'Editions Contre-dires, 2016<br />Usually dispatched within '
+                '2-3 business days, FRENCH LANGUAGE BRAND NEW BOOK - May '
+                'dispatch from the UK or the US. Standard Delivery is usually '
+                '7 to 15 days. Tracking Number whenever possible.',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€9.29',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon_uk.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon_uk&bu=http%3A%2F%2Fwww%2Eamazon%2Eco%2Euk%2F%2Fgp%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dnew%26tag%3Dbookfindercom01&uh=eShtrqjRdDDa420gFuu4',
+ 'vendor': 'Artsncrafts~Books'}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><a targ'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': '0',
+ 'country': '',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "Editions Contre-dires, 2016<br />Livraison à'international, "
+                'Gewöhnlich versandfertig in 24 Stunden. Expédié par Amazon.',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€10.61',
+ 'shop_img': '',
+ 'shop_link': '',
+ 'vendor': ''}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><a targ'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': '0',
+ 'country': '',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "Editions Contre-dires, 2016<br />Livraison à'international, "
+                'Usually dispatched within 24 hours. Expédié par Amazon.',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€12.42',
+ 'shop_img': '',
+ 'shop_link': '',
+ 'vendor': ''}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><a targ'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': '0',
+ 'country': '',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                'Editions Contre-dires, 2016',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€12.90',
+ 'shop_img': '',
+ 'shop_link': '',
+ 'vendor': ''}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': '0',
+ 'country': 'France',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                'Editions Contre-dires, 2016',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€12.90',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/abebooks_new.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=abebooks_new&bu=http%3A%2F%2Faffiliates%2Eabebooks%2Ecom%2Fc%2F59145%2F96538%2F2029%3Fu%3Dhttp%253A%252F%252Fwww%252Eabebooks%252Efr%252Fservlet%252FShopBasket%253Fac%253Da%2526ik%253D20390871749%2526ir%2526xbf%253D%252F52679396649087509429&uh=hyRv9nX5O39iMKDfxe6p',
+ 'vendor': 'Gallix'}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': '0',
+ 'country': 'Royaume-Uni',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                'Editions Contre-dires, 2016<br />416 pages. Expédition sous 2 '
+                'à 3 jours ouvrés',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€12.90',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon_fr.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon_fr&bu=http%3A%2F%2Fwww%2Eamazon%2Efr%2F%2Fgp%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dnew%26tag%3Dbookfinderc06%2D21&uh=z5SpnmFhtNLsQPqFvdxf',
+ 'vendor': 'Librairie Du Monde'}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': '0',
+ 'country': 'France',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                'Editions Contre-dires, 2016',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€12.90',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/abebooks_new.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=abebooks_new&bu=http%3A%2F%2Faffiliates%2Eabebooks%2Ecom%2Fc%2F59145%2F96538%2F2029%3Fu%3Dhttp%253A%252F%252Fwww%252Eabebooks%252Efr%252Fservlet%252FShopBasket%253Fac%253Da%2526ik%253D20559645026%2526ir%2526xbf%253D%252F52679396649087509429&uh=AZtk0FP3rdj8iMlbDfDw',
+ 'vendor': "Librairie Vent d'Ouest"}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><a targ'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': '0',
+ 'country': '',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                'Editions Contre-dires, 2016<br />416 pages. Habituellement '
+                'expédié sous 24 h. Expédié par Amazon. Amazon Premium. Panier '
+                'Plus.',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€12.90',
+ 'shop_img': '',
+ 'shop_link': '',
+ 'vendor': ''}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': '0',
+ 'country': 'France',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                'Editions Contre-dires, 2016<br />416 pages. Expédition sous 1 '
+                'à 2 jours ouvrés, VENDEUR PRO : ARTICLE NEUF SOUS CELLO, '
+                'DISPONIBLE SUR STOCK, EXPEDITION DANS LES 24H, SI COLIS '
+                'INFERIEUR A 250G, EXPEDITION PAR LA POSTE SINON PAR '
+                'TRANSPORTEUR, AFIN DE FACILITER LA LIVRAISON UN NUMERO DE '
+                'PORTABLE EST CONSEILLE, POUR L ETRANGER EXPEDITION POSTE '
+                'SEULEMENT.',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€12.90',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon_fr.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon_fr&bu=http%3A%2F%2Fwww%2Eamazon%2Efr%2F%2Fgp%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dnew%26tag%3Dbookfinderc06%2D21&uh=z5SpnmFhtNLsQPqFvdxf',
+ 'vendor': 'Podium25'}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': '0',
+ 'country': 'Etats-Unis',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                'Editions Contre-dires, 2016<br />Usually ships in 2-3 '
+                'business days, FRENCH LANGUAGE BRAND NEW BOOK - May dispatch '
+                'from the US or the UK. Standard Delivery is usually 7 to 15 '
+                'days. Tracking whenever available.',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€17.13',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon&bu=http%3A%2F%2Fwww%2Eamazon%2Ecom%2F%2Fgp%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dnew%26tag%3Dbkfndr96%2D20&uh=PJ7GFRxrP.BZIkjTFxhc',
+ 'vendor': 'Total Books'}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': '0',
+ 'country': 'Canada',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                'CONTREDIRE, 2016<br />Usually ships within 1 - 2 business '
+                'days, SANS TAXE/NO TAX - EXPEDITION RAPIDE/FAST SHIPPING',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€16.75',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon_ca.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon_ca&bu=http%3A%2F%2Fwww%2Eamazon%2Eca%2F%2Fgp%2Fswitch%2Dlanguage%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dnew%26language%3Dfr_CA%26tag%3Dbookfindercom%2D20&uh=C2b0JkNJIXCQPaiI47OF',
+ 'vendor': 'Renaud-Bray'}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': '0',
+ 'country': 'France',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                'CONTREDIRE, 2016<br />Usually ships within 1 - 2 business '
+                'days, Envoi depuis la France. Si DVD ou Blu-ray region 2. '
+                'Shipping from France. If DVD or Blu-ray this is region 2 and '
+                'may not work on your player.',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€17.03',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon_ca.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon_ca&bu=http%3A%2F%2Fwww%2Eamazon%2Eca%2F%2Fgp%2Fswitch%2Dlanguage%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dnew%26language%3Dfr_CA%26tag%3Dbookfindercom%2D20&uh=C2b0JkNJIXCQPaiI47OF',
+ 'vendor': "Livres Francais, Livres D'Ailleurs"}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': '0',
+ 'country': 'Etats-Unis',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                'Editions Contre-dires, 2016<br />Depending on your location, '
+                'this item may ship from the US or UK',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€17.20',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/abebooks_new.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=abebooks_new&bu=http%3A%2F%2Faffiliates%2Eabebooks%2Ecom%2Fc%2F59145%2F96538%2F2029%3Fu%3Dhttp%253A%252F%252Fwww%252Eabebooks%252Efr%252Fservlet%252FShopBasket%253Fac%253Da%2526ik%253D21720931092%2526ir%2526xbf%253D%252F52679396649087509429&uh=VneRLjrvGr0y4FdFNSEM',
+ 'vendor': 'BWB'}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><a targ'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': '0',
+ 'country': '',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "CONTREDIRE, 2016<br />Livraison à'international, Usually "
+                'ships in 1 to 4 weeks. Expédié par Amazon.',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€17.63',
+ 'shop_img': '',
+ 'shop_link': '',
+ 'vendor': ''}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': '0',
+ 'country': 'Etats-Unis',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                'Editions Contre-dires, 2016<br />Usually ships in 1-2 '
+                'business days, Free USPS Tracking Number for US deliveries. '
+                'If DVD or Blu-ray this is region 2 (Import) and may not work '
+                'on your player. Please allow 2-3 weeks for any product '
+                'delivery.',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€19.75',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon&bu=http%3A%2F%2Fwww%2Eamazon%2Ecom%2F%2Fgp%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dnew%26tag%3Dbkfndr96%2D20&uh=PJ7GFRxrP.BZIkjTFxhc',
+ 'vendor': 'Stars And Stripes Bookstore'}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': '0',
+ 'country': 'France',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                'Editions Contre-dires, 2016<br />Versandfertig in 1 - 2 '
+                'Werktagen, Brand new book. Livre neuf. Expédition rapide de '
+                'votre commande en suivi postal avec protection soignée de vos '
+                'articles. Brand new book. Special care on orders, item very '
+                'well packed. Fast delivery of your order. Tracking number per '
+                'all orders.',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€33.00',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon_de.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon_de&bu=http%3A%2F%2Fwww%2Eamazon%2Ede%2F%2Fgp%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dnew%26tag%3Dbkfndr95%2D1%2D21&uh=ZUAwGOXfirCMYi_cKnH.',
+ 'vendor': 'Central Market'}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': 'Allemagne',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "Editions Contre-dires, 2016<br />D'occasion - Assez bon, "
+                "Livraison à'international, Versandfertig in 1 - 2 Werktagen, "
+                'Von Europas Nr.1 für gebrauchte Bücher und Medien. Gelesene '
+                'Ausgabe in hervorragendem Zustand.',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€6.61',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon_de.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon_de&bu=http%3A%2F%2Fwww%2Eamazon%2Ede%2F%2Fgp%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dused%26tag%3Dbkfndr95%2D1%2D21&uh=z5mtg30DkjGhqJ17.Omp',
+ 'vendor': 'Medimops'}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': 'Allemagne',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "Editions Contre-dires, 2016<br />D'occasion - Satisfaisant, "
+                "Livraison à'international, Versandfertig in 1 - 2 Werktagen, "
+                'Von Europas Nr.1 für gebrauchte Bücher und Medien. Gelesene '
+                'Ausgabe in gutem Zustand, kann Gebrauchsspuren aufweisen.',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€6.67',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon_de.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon_de&bu=http%3A%2F%2Fwww%2Eamazon%2Ede%2F%2Fgp%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dused%26tag%3Dbkfndr95%2D1%2D21&uh=z5mtg30DkjGhqJ17.Omp',
+ 'vendor': 'Medimops'}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': 'Allemagne',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "Editions Contre-dires, 2016<br />D'occasion - Assez bon, "
+                "Usually dispatched within 1-2 business days, From Europe's "
+                'No.1 in used books & media articles.',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€7.85',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon_uk.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon_uk&bu=http%3A%2F%2Fwww%2Eamazon%2Eco%2Euk%2F%2Fgp%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dused%26tag%3Dbookfindercom01&uh=QkIFQZpw_L4ailvKmQi4',
+ 'vendor': 'Momox Co Uk'}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': 'Allemagne',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "Editions Contre-dires, 2016<br />D'occasion - Satisfaisant, "
+                "Usually dispatched within 1-2 business days, From Europe's "
+                'No.1 in used books & media articles.',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€7.91',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon_uk.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon_uk&bu=http%3A%2F%2Fwww%2Eamazon%2Eco%2Euk%2F%2Fgp%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dused%26tag%3Dbookfindercom01&uh=QkIFQZpw_L4ailvKmQi4',
+ 'vendor': 'Momox Co Uk'}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': 'Allemagne',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "Editions Contre-dires, 2016<br />D'occasion - Satisfaisant. "
+                '381 Gramm.',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€8.29',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/abebooks.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=abebooks&bu=http%3A%2F%2Faffiliates%2Eabebooks%2Ecom%2Fc%2F59145%2F96538%2F2029%3Fu%3Dhttp%253A%252F%252Fwww%252Eabebooks%252Efr%252Fservlet%252FShopBasket%253Fac%253Da%2526ik%253D21762112230%2526ir%2526xbf%253D%252F73463812385839319074&uh=O5PF4NNMSmuX85PyU0F3',
+ 'vendor': 'medimops'}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': 'Allemagne',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "Editions Contre-dires, 2016<br />D'occasion. 381 Gramm.",
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€8.29',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/abebooks.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=abebooks&bu=http%3A%2F%2Faffiliates%2Eabebooks%2Ecom%2Fc%2F59145%2F96538%2F2029%3Fu%3Dhttp%253A%252F%252Fwww%252Eabebooks%252Efr%252Fservlet%252FShopBasket%253Fac%253Da%2526ik%253D21641058420%2526ir%2526xbf%253D%252F73463812385839319074&uh=CSAFNKk5vuIFCauPyEBn',
+ 'vendor': 'medimops'}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': 'France',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "Editions Contre-dires, 2016<br />416 pages. D'occasion - "
+                'Assez bon, Expédition sous 1 à 2 jours ouvrés, Bon marché et '
+                "sécurisé. Articles d'occasion contrôlés.",
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€8.91',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon_fr.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon_fr&bu=http%3A%2F%2Fwww%2Eamazon%2Efr%2F%2Fgp%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dused%26tag%3Dbookfinderc06%2D21&uh=1e82ixAeHCygGWbTMS_c',
+ 'vendor': 'Momox Fr'}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': 'France',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "Editions Contre-dires, 2016<br />416 pages. D'occasion - "
+                'Satisfaisant, Expédition sous 1 à 2 jours ouvrés, Bon marché '
+                "et sécurisé. Articles d'occasion contrôlés.",
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€8.97',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon_fr.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon_fr&bu=http%3A%2F%2Fwww%2Eamazon%2Efr%2F%2Fgp%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dused%26tag%3Dbookfinderc06%2D21&uh=1e82ixAeHCygGWbTMS_c',
+ 'vendor': 'Momox Fr'}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': 'Allemagne',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                'Editions Contre-dires, 2016<br />Assez bon. Management minute '
+                ': 200 concepts clés expliqués en un in... | Livre | '
+                "d'occasion",
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€11.90',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/ebay.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=ebay&bu=http%3A%2F%2Frover%2Eebay%2Ecom%2Frover%2F1%2F709%2D53476%2D19255%2D0%2F1%3Fff3%3D2%26toolid%3D10044%26campid%3D5335885949%26customid%3D%26lgeo%3D1%26vectorid%3D229480%26item%3D122341934359&uh=qslRXlzk_vLDSgPmP97s',
+ 'vendor': 'momox_France'}
+2017-02-11 01:31:58 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:59 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': 'Allemagne',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                'Editions Contre-dires, 2016<br />Satisfaisant. Management '
+                'minute : 200 concepts clés expliqués en un in... | Livre | '
+                "d'occasion",
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€11.90',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/ebay.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=ebay&bu=http%3A%2F%2Frover%2Eebay%2Ecom%2Frover%2F1%2F709%2D53476%2D19255%2D0%2F1%3Fff3%3D2%26toolid%3D10044%26campid%3D5335885949%26customid%3D%26lgeo%3D1%26vectorid%3D229480%26item%3D122343453125&uh=2vUPUqOWXlLcJj1j1xVb',
+ 'vendor': 'momox_France'}
+2017-02-11 01:31:59 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:59 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': 'France',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "Editions Contre-dires, 2016<br />416 pages. D'occasion - "
+                'Comme neuf, Expédition sous 1 à 2 jours ouvrés, VENDEUR PRO : '
+                'LIVRE JAMAIS OUVERT, SOUS CELLO, DISPONIBLE SUR STOCK, '
+                'EXPEDITION DANS LES 24H, SI COLIS INFERIEUR A 250G, '
+                'EXPEDITION PAR LA POSTE SINON PAR TRANSPORTEUR,AFIN DE '
+                'FACILITER LA LIVRAISON UN NUMERO DE PORTABLE EST CONSEILLE, '
+                'POUR L ETRANGER EXPEDITION POSTE SEULEMENT.',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€12.64',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon_fr.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon_fr&bu=http%3A%2F%2Fwww%2Eamazon%2Efr%2F%2Fgp%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dused%26tag%3Dbookfinderc06%2D21&uh=1e82ixAeHCygGWbTMS_c',
+ 'vendor': 'Cestalire'}
+2017-02-11 01:31:59 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><a targ'>
+2017-02-11 01:31:59 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': '',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                'Editions Contre-dires, 2016',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€13.65',
+ 'shop_img': '',
+ 'shop_link': '',
+ 'vendor': ''}
+2017-02-11 01:31:59 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:59 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': 'Allemagne',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "Editions Contre-dires, 2016<br />D'occasion - Assez bon, "
+                "Livraison à'international, Usually ships in 1-2 business "
+                'days, Good prices, safe shopping. Certificated preloved '
+                'articles. Please allow 1-2 weeks for delivery.',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€16.17',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon&bu=http%3A%2F%2Fwww%2Eamazon%2Ecom%2F%2Fgp%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dused%26tag%3Dbkfndr96%2D20&uh=MSCJFgU_dcZbcYzmDDRO',
+ 'vendor': 'Momox Com'}
+2017-02-11 01:31:59 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:59 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': 'Allemagne',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "Editions Contre-dires, 2016<br />D'occasion - Satisfaisant, "
+                "Livraison à'international, Usually ships in 1-2 business "
+                'days, Good prices, safe shopping. Certificated preloved '
+                'articles. Please allow 1-2 weeks for delivery.',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€16.25',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon&bu=http%3A%2F%2Fwww%2Eamazon%2Ecom%2F%2Fgp%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dused%26tag%3Dbkfndr96%2D20&uh=MSCJFgU_dcZbcYzmDDRO',
+ 'vendor': 'Momox Com'}
+2017-02-11 01:31:59 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:59 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': 'Canada',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "CONTRE-DIRES, 2016<br />D'occasion - Comme neuf. Etat de neuf "
+                '/ As new condition / Expédié de la Suisse / Sent out from '
+                'Switzerland / The picture may not correspond to the book / '
+                "L'image peut ne pas correspondre au livre 2R829377 "
+                '9782849333778 36,0 B 12/10/2016 0,352',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€19.33',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/abebooks.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=abebooks&bu=http%3A%2F%2Faffiliates%2Eabebooks%2Ecom%2Fc%2F59145%2F96538%2F2029%3Fu%3Dhttp%253A%252F%252Fwww%252Eabebooks%252Efr%252Fservlet%252FShopBasket%253Fac%253Da%2526ik%253D10839891408%2526ir%2526xbf%253D%252F73463812385839319074&uh=dWB7iJzYsmLX5kgtS5rZ',
+ 'vendor': 'Librairie La Canopee. Inc.'}
+2017-02-11 01:31:59 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:59 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': 'Allemagne',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "CONTREDIRE, 2016<br />D'occasion - Assez bon, Usually ships "
+                'within 1 - 2 business days, Good prices, safe shopping. '
+                'Certificated preloved articles. Please allow 1-2 weeks for '
+                'delivery.',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€20.43',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon_ca.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon_ca&bu=http%3A%2F%2Fwww%2Eamazon%2Eca%2F%2Fgp%2Fswitch%2Dlanguage%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dused%26language%3Dfr_CA%26tag%3Dbookfindercom%2D20&uh=4Ib9_d8a5xwfw2.ZXx3Z',
+ 'vendor': 'Momox Ca'}
+2017-02-11 01:31:59 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:59 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': 'France',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "CONTREDIRE, 2016<br />D'occasion - Comme neuf, Usually ships "
+                'within 1 - 2 business days, Envoi depuis la France. Si DVD ou '
+                'Blu-ray region 2. Shipping from France. If DVD or Blu-ray '
+                'this is region 2 and may not work on your player.',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€20.44',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon_ca.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon_ca&bu=http%3A%2F%2Fwww%2Eamazon%2Eca%2F%2Fgp%2Fswitch%2Dlanguage%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dused%26language%3Dfr_CA%26tag%3Dbookfindercom%2D20&uh=4Ib9_d8a5xwfw2.ZXx3Z',
+ 'vendor': "Livres Francais, Livres D'Ailleurs"}
+2017-02-11 01:31:59 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:59 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': 'France',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "CONTRE-DIRES, 2016<br />D'occasion. 9782849333778 2R829377 "
+                '36,0 B 0,352 Etat de neuf / As new condition / Expédié de la '
+                'Suisse / Sent out from Switzerland / The picture may not '
+                "correspond to the book / L'image peut ne pas correspondre au "
+                'livre',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€20.00',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/abebooks.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=abebooks&bu=http%3A%2F%2Faffiliates%2Eabebooks%2Ecom%2Fc%2F59145%2F96538%2F2029%3Fu%3Dhttp%253A%252F%252Fwww%252Eabebooks%252Efr%252Fservlet%252FShopBasket%253Fac%253Da%2526ik%253D1212116974%2526ir%2526xbf%253D%252F73463812385839319074&uh=8XVF6cbh88Howjv2vkl3',
+ 'vendor': 'Mémoire des hommes'}
+2017-02-11 01:31:59 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:59 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': 'Etats-Unis',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "Editions Contre-dires, 2016<br />D'occasion - Comme neuf, "
+                'Usually ships in 1-2 business days, Free USPS Tracking Number '
+                'for US deliveries. If DVD or Blu-ray this is region 2 '
+                '(Import) and may not work on your player. Please allow 2-3 '
+                'weeks for any product delivery.',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€23.70',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon&bu=http%3A%2F%2Fwww%2Eamazon%2Ecom%2F%2Fgp%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dused%26tag%3Dbkfndr96%2D20&uh=MSCJFgU_dcZbcYzmDDRO',
+ 'vendor': 'Stars And Stripes Bookstore'}
+2017-02-11 01:31:59 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:59 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': 'France',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "Editions Contre-dires, 2016<br />D'occasion - Assez bon, "
+                'Versandfertig in 1 - 2 Werktagen, Zuverlässiger Anbieter. '
+                'Vielsprachiger Kundenservice. Lieferung innerhalb von 20 '
+                'Tagen.',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€22.89',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon_de.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon_de&bu=http%3A%2F%2Fwww%2Eamazon%2Ede%2F%2Fgp%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dused%26tag%3Dbkfndr95%2D1%2D21&uh=z5mtg30DkjGhqJ17.Omp',
+ 'vendor': 'Fulton Ds Europe'}
+2017-02-11 01:31:59 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:59 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': 'Canada',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "CONTRE-DIRES, 2016<br />D'occasion - Comme neuf. Etat de neuf "
+                "/ As new condition / L'image peut ne pas correspondre au "
+                'livre / The image may not correspond to the book '
+                '9782849333778 9782849333778 32980',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€23.14',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/abebooks.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=abebooks&bu=http%3A%2F%2Faffiliates%2Eabebooks%2Ecom%2Fc%2F59145%2F96538%2F2029%3Fu%3Dhttp%253A%252F%252Fwww%252Eabebooks%252Efr%252Fservlet%252FShopBasket%253Fac%253Da%2526ik%253D12785765772%2526ir%2526xbf%253D%252F73463812385839319074&uh=iAO_H8TKnImJ10zy1Dwe',
+ 'vendor': 'Librairie La Canopee. Inc.'}
+2017-02-11 01:31:59 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:59 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': 'France',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "Editions Contre-dires, 2016<br />D'occasion - Assez bon, "
+                'Usually dispatched within 1-2 business days, Please check\xa0'
+                '! This item is written in French. If you have any question, '
+                'contact us\xa0! Delivery time\xa0: 2-3 weeks (North America), '
+                '3-4 weeks (South America)',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€23.80',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon_uk.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon_uk&bu=http%3A%2F%2Fwww%2Eamazon%2Eco%2Euk%2F%2Fgp%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dused%26tag%3Dbookfindercom01&uh=QkIFQZpw_L4ailvKmQi4',
+ 'vendor': 'Bb Corps Uk'}
+2017-02-11 01:31:59 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:59 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': 'France',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "Editions Contre-dires, 2016<br />D'occasion - Assez bon, "
+                'Usually ships in 1-2 business days, Pro Seller. French '
+                'language book. Average delivery time : 15 days to North '
+                'America, 21 days to South America.',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€25.20',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon&bu=http%3A%2F%2Fwww%2Eamazon%2Ecom%2F%2Fgp%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dused%26tag%3Dbkfndr96%2D20&uh=MSCJFgU_dcZbcYzmDDRO',
+ 'vendor': 'Prestivo'}
+2017-02-11 01:31:59 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:59 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': 'France',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "Editions Contre-dires, 2016<br />416 pages. D'occasion - "
+                'Comme neuf, Expédition sous 1 à 2 jours ouvrés, Prix '
+                "d'origine : 12.9 euros. Veuillez compter 10 jours pour la "
+                "livraison / 25 jours pour l'étranger. Envoi soigné avec des "
+                'bulles. English speakers welcome.',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€24.15',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon_fr.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon_fr&bu=http%3A%2F%2Fwww%2Eamazon%2Efr%2F%2Fgp%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dused%26tag%3Dbookfinderc06%2D21&uh=1e82ixAeHCygGWbTMS_c',
+ 'vendor': 'Les Livres Du Château'}
+2017-02-11 01:31:59 [justbook] INFO: <Selector xpath='descendant-or-self::td' data='<td class="results-table-center"><span c'>
+2017-02-11 01:31:59 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.justbooks.fr/search/?author=&title=&lang=fr&new_used=*&destination=fr&currency=EUR&binding=*&isbn=978-2-84933-377-8&keywords=&minprice=&maxprice=&min_year=&max_year=&mode=advanced&st=sr&ac=qr&ps=bp>
+{'book_type': 'used',
+ 'country': 'France',
+ 'description': 'Couverture souple, ISBN\xa0978-2-84933-377-8<br />Editeur: '
+                "CONTREDIRE, 2016<br />D'occasion - Assez bon, Usually ships "
+                'within 1 - 2 business days, Pro Seller. French language book. '
+                'Average delivery time : 15 days to North America, 21 days to '
+                'South America. Vendeur pro. Livres en français. Délai de '
+                'livraison\xa0: 15 jours pour Amérique du Nord, 21 jours pour '
+                'Amérique du Sud, 14 jours pour Europe, 21 jours pour '
+                'Asie/Oceanie',
+ 'isbn': '978-2-84933-377-8',
+ 'price': '€25.11',
+ 'shop_img': '//d3uahvj51kpljk.cloudfront.net/static/img/partners/amazon_ca.gif',
+ 'shop_link': '//www.justbooks.fr/search/?st=rs&ac=dp&qi=bQ6m0aU6v17lJ9bpBhHKLhcxHoU_1486776717_1:1:1&bs=amazon_ca&bu=http%3A%2F%2Fwww%2Eamazon%2Eca%2F%2Fgp%2Fswitch%2Dlanguage%2Foffer%2Dlisting%2F2849333778%2Fsr%3D%2Fqid%3D%2F%3Fcondition%3Dused%26language%3Dfr_CA%26tag%3Dbookfindercom%2D20&uh=4Ib9_d8a5xwfw2.ZXx3Z',
+ 'vendor': 'Prestivo3'}
+2017-02-11 01:31:59 [scrapy.core.engine] INFO: Closing spider (finished)
+2017-02-11 01:31:59 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 398,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 21338,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 2, 11, 1, 31, 59, 79848),
+ 'item_scraped_count': 82,
+ 'log_count/DEBUG': 84,
+ 'log_count/INFO': 48,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2017, 2, 11, 1, 31, 54, 919129)}
+2017-02-11 01:31:59 [scrapy.core.engine] INFO: Spider closed (finished)
