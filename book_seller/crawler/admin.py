@@ -9,11 +9,20 @@ from crawler import models
 
 
 class BookAdmin(admin.ModelAdmin):
-    """SiteAdmin class
+    """BookAdmin class
     """
-    list_display = ('isbn', 'vendor', 'country', 'price')
-    list_filter = ('isbn', 'vendor', 'country', 'price')
-    search_fields = ('isbn', 'vendor', 'country', 'price')
+    list_display = ('isbn', )
+    list_filter = ('isbn', )
+    search_fields = ('isbn', )
+
+
+class OfferAdmin(admin.ModelAdmin):
+    """OfferAdmin class
+    """
+    list_display = ('book', 'vendor', 'country', 'price')
+    list_filter = ('book', 'vendor', 'country', 'price')
+    search_fields = ('book', 'vendor', 'country', 'price')
 
 
 admin.site.register(models.Book, BookAdmin)
+admin.site.register(models.Offer, OfferAdmin)

@@ -11,26 +11,39 @@ APP_NAME = "crawler"
 
 
 class Book(models.Model):
-    """Variables model.
+    """Book model.
+    """
+    isbn = models.SlugField(max_length=20, unique=True)
+    title = models.CharField(max_length=200, null=True, blank=True)
+    cover_image = models.URLField(max_length=200, null=True, blank=True)
+    editor = models.CharField(max_length=200, null=True, blank=True)
+    distribution_date = models.CharField(max_length=4, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        app_label = APP_NAME
+
+    def __str__(self):
+        return self.isbn
+
+
+class Offer(models.Model):
+    """Offer model.
     """
     NEW = '0'
     USED = '1'
-    BOOK_TYPE = (
+    BOOK_CONDITION = (
         (NEW, 'Neuf'),
         (USED, 'Occassion'),
     )
 
-    book_type = models.CharField(
-        max_length=2,
-        choices=BOOK_TYPE,
-        null=True,
-        blank=True
-    )
-    isbn = models.CharField(max_length=20)
+    book = models.ForeignKey(Book)
+    book_condition = models.CharField(max_length=2, choices=BOOK_CONDITION, null=True,blank=True)
     vendor = models.CharField(max_length=200, null=True, blank=True)
     country = models.CharField(max_length=200, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
-    price = models.CharField(max_length=10, null=True, blank=True)
+    price = models.FloatField(null=True, blank=True)
     shop_img = models.URLField(max_length=200, null=True, blank=True)
     shop_link = models.URLField(max_length=200, null=True, blank=True)
 
@@ -38,4 +51,4 @@ class Book(models.Model):
         app_label = APP_NAME
 
     def __str__(self):
-        return self.isbn
+        return self.book.isbn

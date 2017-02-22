@@ -11,11 +11,19 @@ from book_seller.settings.base import *  # noqa
 #
 DEBUG = True
 
-# INSTALLED_APPS += [  # noqa
+INSTALLED_APPS += [  # noqa
 #     'django_nose',
 #     'behave_django',
 #     'stubs',
-# ]
+    'livereload',
+]
+
+MIDDLEWARE += [
+    'livereload.middleware.LiveReloadScript',
+]
+
+
+ALLOWED_HOSTS += ["192.168.0.253", "127.0.0.1"]
 
 #####
 # Logging configuration

@@ -6,11 +6,11 @@
 
 import scrapy
 from scrapy_djangoitem import DjangoItem
-from crawler.models import Book
+from crawler.models import Book, Offer
 
 
-class BookItem(DjangoItem):
-    django_model = Book
+class OfferItem(DjangoItem):
+    django_model = Offer
 
 
 class BlogSpider(scrapy.Spider):
@@ -24,11 +24,22 @@ class BlogSpider(scrapy.Spider):
         yield scrapy.Request(url, self.parse)
 
     def parse(self, response):
-        prices = response.css('span.results-price a')
-        for price in prices:
-            yield {'price': price.css('::text').extract_first()}
 
         tables = response.css("table.results-table-Logo")
+        book_title = response.css('#bd-isbn div.attributes div')[1].css('a strong span ::text').extract_first()
+        book_cover = response.css('img#coverImage ::attr(src)').extract_first()
+        book_editor = response.css('span.describe-isbn ::text').extract_first().split(",")[0]
+        book_distribution = response.css('span.describe-isbn ::text').extract_first().split(",")[1].replace(" ", "")
+        self.logger.info('book_title: %s', book_title)
+        # self.logger.info('book_cover: %s', book_cover)
+        # self.logger.info('book_editor: %s', book_editor)
+        # self.logger.info('book_distribution: %s', book_distribution)
+        current_book = Book.objects.get(isbn=getattr(self, 'isbn', None))
+        current_book.title = book_title
+        current_book.cover_image = book_cover
+        current_book.editor = book_editor
+        current_book.distribution_date = book_distribution
+        current_book.save()
         table_type = "0"
         if len(tables) == 1:
             table_type = "1"
@@ -40,25 +51,25 @@ class BlogSpider(scrapy.Spider):
                 shop_link = ""
                 country = ""
                 if len(tds) == 4:
-                    self.logger.info(tds[1])
+                    # self.logger.info(tds[1])
                     if len(tds[1].css('.results-explanatory-text-Logo')) == 3:
                         vendor = tds[1].css('span')[0].css('::text').extract_first()
                         country = tds[1].css('span')[2].css('::text').extract_first()
                         shop_img = tds[1].css('span')[1].css('a img ::attr(src)').extract_first()
                         shop_link = tds[1].css('span')[1].css('a ::attr(href)').extract_first()
                     description = "<br />".join(tds[2].css('::text').extract())
-                    price = tds[3].css('a ::text').extract_first()
-                    book = BookItem()
-                    book['isbn'] = getattr(self, 'isbn', None)
-                    book['book_type'] = table_type
-                    book['vendor'] = vendor
-                    book['shop_img'] = shop_img
-                    book['shop_link'] = shop_link
-                    book['country'] = country
-                    book['description'] = description
-                    book['price'] = price
-                    book.save()
+                    price = float(tds[3].css('a ::text').extract_first().replace("€", ""))
+                    offer = OfferItem()
+                    offer['book'] = current_book
+                    offer['book_condition'] = table_type
+                    offer['vendor'] = vendor
+                    offer['shop_img'] = shop_img
+                    offer['shop_link'] = shop_link
+                    offer['country'] = country
+                    offer['description'] = description
+                    offer['price'] = price
+                    offer.save()
 
-                    yield book
+                    # yield offer
 
             table_type = "used"

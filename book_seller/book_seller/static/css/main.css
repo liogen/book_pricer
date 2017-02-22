@@ -1,0 +1,47 @@
+.abcen2 {
+    position: absolute;
+    top: 50%;
+}
+
+.intro-header {
+    background: rgba(0, 0, 0, 0) url("/static/img/cover2.jpg") no-repeat scroll center center / cover;
+}
+
+.hidden {
+    display: none;
+}
+
+#book-loading {
+    height: 100px;
+    margin-top: 50px;
+}
+
+#book-loading img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#book-info {
+    margin-top: 50px;
+}
+
+#book-list .book-list-img {
+    height: 100%;
+    max-height: 200px;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#book-list .book-list-description {
+    text-align: center;
+}
+
+@media screen and ( max-height: 800px ){
+    .abcen2 {
+        background-color: red;
+        position: absolute;
+        bottom: 10%;
+    }
+}
