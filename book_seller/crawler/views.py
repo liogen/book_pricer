@@ -4,15 +4,21 @@
 
 """View that start crawler for justbook.fr"""
 
+import logging
 from scrapyd_api import ScrapydAPI
+from datetime import timedelta
 from django.views import View
+from django.conf import settings
+from django.utils import timezone
 from django.shortcuts import render
+from django.http import JsonResponse
 from crawler.form import BookForm
 from crawler.models import Book, Offer
 
-
+LOGGER = logging.getLogger(settings.LOGGER_NAME)
 SITE_NAME = 'BookSeller'
 SITE_DESCRIPTION = 'The easiest way to know the correct price of an used book'
+
 
 class CrawlerView(View):
 
@@ -31,26 +37,36 @@ class CrawlerView(View):
 
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
-
+        json_response = {}
         isbn = "error"
 
         if form.is_valid():
             isbn = form.cleaned_data["isbn"]
-
-            for offer in Offer.objects.filter(book__isbn=isbn):
-                offer.delete()
-            for book in Book.objects.filter(isbn=isbn):
-                book.delete()
-
+            book = None
+            start_crawler = False
             try:
-                Book.objects.get(isbn=isbn)
+                book = Book.objects.get(isbn=isbn)
             except Book.DoesNotExist:
                 Book.objects.create(isbn=isbn)
 
-            scrapyd = ScrapydAPI('http://localhost:6800')
-            scrapyd.schedule('justbookcrawler', 'justbook', isbn=isbn)
+            if book is not None and book.title is not None:
+                if book.updated_at <= timezone.now() + timedelta(days=-2):
+                    for offer in Offer.objects.filter(book__isbn=isbn):
+                        offer.delete()
+                    start_crawler = True
+                else:
+                    json_response['book_title'] = book.title
+                    json_response['cover_image'] = book.cover_image
+                    json_response['editor'] = book.editor
+                    json_response['distribution_date'] = book.distribution_date
+            else:
+                start_crawler = True
 
-        self.initial['form'] = form
-        self.initial['isbn'] = isbn
+            if start_crawler is True:
+                scrapyd = ScrapydAPI('http://localhost:6800')
+                scrapyd.schedule('justbookcrawler', 'justbook', isbn=isbn)
 
-        return render(request, self.template_name, self.initial)
+        json_response['isbn'] = isbn
+        json_response['crawler_started'] = start_crawler
+
+        return JsonResponse(json_response)

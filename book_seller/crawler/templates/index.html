@@ -259,28 +259,38 @@
 
             <div class="container hidden" id="book-info">
 
-                <div class="row">
-
+                <div class="row" id="book-info-tab">
                     <div class="col-sm-6 wow fadeInLeftBig">
-                        <img class="img-responsive " src="{% static 'flatfy/img/ipad.png' %}" alt="">
+                        <img class="img-responsive" src="" alt="book cover">
                     </div>
 
                     <div class="col-sm-6 wow fadeInRightBig" data-animation-delay="200">
-                        <h3 class="section-heading">Full Responsive</h3>
-                        <div class="sub-title lead3">
-                            Lorem ipsum dolor sit atmet sit dolor greand fdanrh<br> sdfs sit atmet sit dolor grean fdanrh sdfs
-                        </div>
-                        <p class="lead">
-                            In his igitur partibus duabus nihil erat, quod Zeno commuta rest gestiret.
-                            Sed virtutem ipsam inchoavit, nihil ampliusuma. Scien tiam pollicentur,
-                            uam non erat mirum sapientiae lorem cupido
-                            patria esse cariorem. Quae qui non vident, nihilamane umquam magnum ac cognitione.
-                        </p>
+                        <h3 class="section-heading"></h3>
+                        <div class="sub-title lead3"></div>
+                        <!--<p class="lead">-->
+                            <!--In his igitur partibus duabus nihil erat, quod Zeno commuta rest gestiret.-->
+                            <!--Sed virtutem ipsam inchoavit, nihil ampliusuma. Scien tiam pollicentur,-->
+                            <!--uam non erat mirum sapientiae lorem cupido-->
+                            <!--patria esse cariorem. Quae qui non vident, nihilamane umquam magnum ac cognitione.-->
+                        <!--</p>-->
 
-                         <p><a class="btn btn-embossed btn-primary" href="#" role="button">View Details</a>
-                         <a class="btn btn-embossed btn-info" href="#" role="button">Visit Website</a></p>
+                         <!--<p><a class="btn btn-embossed btn-primary" href="#" role="button">View Details</a>-->
+                         <!--<a class="btn btn-embossed btn-info" href="#" role="button">Visit Website</a></p>-->
                     </div>
                 </div>
+
+				<div class="row" id="book-info-error">
+					<div class="col-sm-6 wow fadeInLeftBig" data-animation-delay="200">
+						<h3 class="section-heading">Oups, somethings goes wrong !</h3>
+						<p class="lead">
+							It seems that there is no existing book with this ISBN {{ isbn }}. Please try to correct your
+							ISBN or perform an other search.
+						</p>
+					</div>
+					<div class="col-sm-6 wow fadeInRightBig">
+						<img class="img-responsive " src="{{ book_info.cover_image }}" alt="{{ book_info.title }}">
+					</div>
+				</div>
             </div>
         </div>
     </div>
@@ -300,7 +310,7 @@
 				    {% for book in books %}
                         <div class="col-sm-4 block wow bounceIn">
                             <div class="row">
-                                <div class="col-md-6 rotate">
+                                <div class="col-md-6">
                                     <!--<i class="fa fa-desktop fa-4x "> </i>-->
                                     <img src="{{ book.cover_image }}" alt="{{ book.title }}" class="book-list-img" />
                                 </div>
