@@ -11,9 +11,9 @@ from crawler import models
 class BookAdmin(admin.ModelAdmin):
     """BookAdmin class
     """
-    list_display = ('isbn', )
-    list_filter = ('isbn', )
-    search_fields = ('isbn', )
+    list_display = ('isbn', 'title', 'editor', 'distribution_date', 'created_at', 'updated_at')
+    list_filter = ('isbn', 'title',)
+    search_fields = ('isbn', 'title',)
 
 
 class OfferAdmin(admin.ModelAdmin):

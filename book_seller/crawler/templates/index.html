@@ -259,7 +259,7 @@
 
             <div class="container hidden" id="book-info">
 
-                <div class="row" id="book-info-tab">
+                <div class="row hidden" id="book-info-tab">
                     <div class="col-sm-6 wow fadeInLeftBig">
                         <img class="img-responsive" src="" alt="book cover">
                     </div>
@@ -287,8 +287,8 @@
 							ISBN or perform an other search.
 						</p>
 					</div>
-					<div class="col-sm-6 wow fadeInRightBig">
-						<img class="img-responsive " src="{{ book_info.cover_image }}" alt="{{ book_info.title }}">
+					<div class="col-sm-6 wow fadeInRightBig center">
+						<img class="img-responsive " src="{% static 'flatfy/img/icon/search.svg' %}" alt="search.svg" class="book-list-img">
 					</div>
 				</div>
             </div>

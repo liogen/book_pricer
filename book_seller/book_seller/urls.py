@@ -13,16 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.conf.urls import url
 from django.contrib import admin
-from crawler.views import CrawlerView
-
-from django.conf import settings
 from django.conf.urls.static import static
-
+from crawler.views import CrawlerView, ISBNInfoView
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', CrawlerView.as_view()),
+    url(r'^isbn/(?P<isbn>.*)/', ISBNInfoView.as_view()),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

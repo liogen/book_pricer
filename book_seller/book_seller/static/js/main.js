@@ -20,8 +20,6 @@ jQuery(function($) {
                 $("#book-info-tab").removeClass("hidden");
                 $("#book-info-error").addClass("hidden");
             }
-            $("#book-info").addClass("hidden");
-            $("#book-loading").removeClass("hidden");
             scrollToAnchor('isbn-list');
             window.location.href = "#isbn-list";
         }
@@ -29,6 +27,8 @@ jQuery(function($) {
         function goToISBNList() {
             scrollToAnchor('isbn-list');
             window.location.href = "#isbn-list";
+            $("#book-info").addClass("hidden");
+            $("#book-loading").removeClass("hidden");
         }
 
         function getBookInfo() {
@@ -37,20 +37,21 @@ jQuery(function($) {
         }
 
         function displayBook(json_book_info) {
-            emptyBookInfo(json_book_info);
-            goToISBNList();
-            setTimeout(getBookInfo, 2000);
+            if ('crawler_started' in json_book_info &&
+                json_book_info['crawler_started'] === true) {
+                setTimeout(function(){
+                    getISBN(json_book_info['isbn'], displayBook);
+                }, 2000);
+            } else {
+                emptyBookInfo(json_book_info);
+                setTimeout(getBookInfo, 2000);
+            }
         }
 
-        function postISBN(isbn, callback) {
-
+        function getISBN(isbn, callback) {
             var request = $.ajax({
-                url: "/",
-                type: "post",
-                data: {
-                    'isbn': isbn,
-                    csrfmiddlewaretoken: $.cookie("csrftoken")
-                }
+                url: "/isbn/" + isbn,
+                type: "get"
             });
 
             request.done(function (response, textStatus, jqXHR){
@@ -66,11 +67,32 @@ jQuery(function($) {
                     textStatus, errorThrown
                 );
             });
+        }
 
-            // Callback handler that will be called regardless
-            // if the request failed or succeeded
-            request.always(function () {
-                // Reenable the inputs
+        function postISBN(isbn, callback) {
+
+            var request = $.ajax({
+                url: "/",
+                type: "post",
+                data: {
+                    'isbn': isbn,
+                    csrfmiddlewaretoken: $.cookie("csrftoken")
+                }
+            });
+
+            request.done(function (response, textStatus, jqXHR){
+                console.log("Hooray, it worked!");
+                goToISBNList();
+                callback(response);
+            });
+
+            // Callback handler that will be called on failure
+            request.fail(function (jqXHR, textStatus, errorThrown){
+                // Log the error to the console
+                console.error(
+                    "The following error occurred: "+
+                    textStatus, errorThrown
+                );
             });
         }
 
