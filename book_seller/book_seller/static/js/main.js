@@ -28,6 +28,8 @@ jQuery(function($) {
             scrollToAnchor('isbn-list');
             window.location.href = "#isbn-list";
             $("#book-info").addClass("hidden");
+            $("#book-info-tab").addClass("hidden");
+            $("#book-info-error").addClass("hidden");
             $("#book-loading").removeClass("hidden");
         }
 
@@ -48,9 +50,15 @@ jQuery(function($) {
             }
         }
 
+        function displayError() {
+            $("#book-loading").addClass("hidden");
+            $("#book-info").removeClass("hidden");
+            $("#book-info-error").removeClass("hidden");
+        }
+
         function getISBN(isbn, callback) {
             var request = $.ajax({
-                url: "/isbn/" + isbn,
+                url: "/isbn/" + isbn + "/",
                 type: "get"
             });
 
@@ -62,6 +70,7 @@ jQuery(function($) {
             // Callback handler that will be called on failure
             request.fail(function (jqXHR, textStatus, errorThrown){
                 // Log the error to the console
+                displayError();
                 console.error(
                     "The following error occurred: "+
                     textStatus, errorThrown
@@ -96,17 +105,43 @@ jQuery(function($) {
             });
         }
 
-        console.log('Here')
-
-        $(".isbn-submit").click(function(event) {
-            console.log('Here2')
-            isbn = $("#isbn-value").val();
+        $("#isbn-submit-top").click(function(event) {
+            isbn = $("#isbn-value-top").val();
             if (isbn === "") {
                 return;
             }
             event.preventDefault();
-            console.log(isbn);
+            $("#isbn-value-middle").val(isbn);
             postISBN(isbn, displayBook)
+        });
+
+        $("#isbn-submit-middle").click(function(event) {
+            isbn = $("#isbn-value-middle").val();
+            if (isbn === "") {
+                return;
+            }
+            event.preventDefault();
+            $("#isbn-value-top").val(isbn);
+            postISBN(isbn, displayBook)
+        });
+
+        $("#book-info .book-info-navbar li").click(function(event) {
+            event.preventDefault();
+            $("#book-info .book-info-navbar li").removeClass("active");
+            $(this).addClass("active");
+            if ($(this).hasClass("book-info-tab-description")) {
+                $("#book-info .book-info-description").removeClass("hidden");
+                $("#book-info .book-info-prices").addClass("hidden");
+                $("#book-info .book-info-offers").addClass("hidden");
+            } else if ($(this).hasClass("book-info-tab-prices")) {
+                $("#book-info .book-info-description").addClass("hidden");
+                $("#book-info .book-info-prices").removeClass("hidden");
+                $("#book-info .book-info-offers").addClass("hidden");
+            } else {
+                $("#book-info .book-info-description").addClass("hidden");
+                $("#book-info .book-info-prices").addClass("hidden");
+                $("#book-info .book-info-offers").removeClass("hidden");
+            }
         });
     });
 });

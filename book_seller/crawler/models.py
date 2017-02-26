@@ -18,6 +18,7 @@ class Book(models.Model):
     cover_image = models.URLField(max_length=200, null=True, blank=True)
     editor = models.CharField(max_length=200, null=True, blank=True)
     distribution_date = models.CharField(max_length=4, null=True, blank=True)
+    not_found = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

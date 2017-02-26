@@ -23,7 +23,7 @@
 }
 
 #book-info {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 #book-list .book-list-img {
@@ -38,9 +38,18 @@
     text-align: center;
 }
 
+.img-responsive {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#book-info .book-info-navbar {
+    margin-bottom: 30px;
+}
+
 @media screen and ( max-height: 800px ){
     .abcen2 {
-        background-color: red;
         position: absolute;
         bottom: 10%;
     }

@@ -110,12 +110,12 @@
                     {% csrf_token %}
                     <div class="form-group row">
                         <div class="col-xs-offset-3 col-xs-6 col-sm-offset-3 col-xs-6 col-md-offset-3 col-md-6">
-                            {{ form.isbn }}
+                            <input placeholder="Enter your ISBN. Ex: 978-2-84933-377-8" class="form-control wow fadeIn" data-wow-delay="1.0s" id="isbn-value-top" />
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-xs-offset-2 col-xs-8 col-md-offset-3 col-md-6">
-                            <input type="submit" value="Get the price" class="btn btn-lg mybutton_cyano wow fadeIn isbn-submit" data-wow-delay="1.2s" />
+                            <input type="submit" value="Get the price" id="isbn-submit-top" class="btn btn-lg mybutton_cyano wow fadeIn" data-wow-delay="1.2s" />
                         </div>
                     </div>
                 </form>
@@ -238,10 +238,10 @@
                             <form action="#" method="post">
                                 {% csrf_token %}
                                 <div class="col-xs-offset-2 col-xs-5 col-md-offset-1 col-md-6">
-                                    {{ form.isbn }}
+                                    <input placeholder="Enter your ISBN. Ex: 978-2-84933-377-8" class="form-control wow fadeIn" data-wow-delay="1.0s" id="isbn-value-middle" />
                                 </div>
                                 <div class="col-xs-4 col-md-4">
-                                    <input type="submit" value="Get the price" class="btn btn-lg mybutton_cyano wow fadeIn isbn-submit" data-wow-delay="1.2s" />
+                                    <input type="submit" value="Get the price" id="isbn-submit-middle" class="btn btn-lg mybutton_cyano wow fadeIn" data-wow-delay="1.2s" />
                                 </div>
                             </form>
                         </div>
@@ -260,35 +260,32 @@
             <div class="container hidden" id="book-info">
 
                 <div class="row hidden" id="book-info-tab">
-                    <div class="col-sm-6 wow fadeInLeftBig">
-                        <img class="img-responsive" src="" alt="book cover">
-                    </div>
+					<ul class="book-info-navbar nav nav-tabs nav-justified">
+						<li role="presentation" class="active book-info-tab-description"><a href="">Book information</a></li>
+						<li role="presentation" class="book-info-tab-prices"><a href="">Book price comparison</a></li>
+						<li role="presentation" class="book-info-tab-offers"><a href="">Offers list</a></li>
+					</ul>
+					<div class="book-info-description">
+						<div class="col-sm-6 wow fadeInLeftBig">
+							<img class="img-responsive" src="" alt="book cover">
+						</div>
 
-                    <div class="col-sm-6 wow fadeInRightBig" data-animation-delay="200">
-                        <h3 class="section-heading"></h3>
-                        <div class="sub-title lead3"></div>
-                        <!--<p class="lead">-->
-                            <!--In his igitur partibus duabus nihil erat, quod Zeno commuta rest gestiret.-->
-                            <!--Sed virtutem ipsam inchoavit, nihil ampliusuma. Scien tiam pollicentur,-->
-                            <!--uam non erat mirum sapientiae lorem cupido-->
-                            <!--patria esse cariorem. Quae qui non vident, nihilamane umquam magnum ac cognitione.-->
-                        <!--</p>-->
-
-                         <!--<p><a class="btn btn-embossed btn-primary" href="#" role="button">View Details</a>-->
-                         <!--<a class="btn btn-embossed btn-info" href="#" role="button">Visit Website</a></p>-->
-                    </div>
+						<div class="col-sm-6 wow fadeInRightBig" data-animation-delay="200">
+							<h3 class="section-heading"></h3>
+							<div class="sub-title lead3"></div>
+						</div>
+					</div>
+					<div class="book-info-prices hidden">12</div>
+					<div class="book-info-offers hidden">13</div>
                 </div>
 
-				<div class="row" id="book-info-error">
-					<div class="col-sm-6 wow fadeInLeftBig" data-animation-delay="200">
-						<h3 class="section-heading">Oups, somethings goes wrong !</h3>
-						<p class="lead">
-							It seems that there is no existing book with this ISBN {{ isbn }}. Please try to correct your
+				<div class="row hidden" id="book-info-error">
+					<div class="col-sm-6 col-sm-offset-3">
+						<h3 class="section-heading wow fadeInLeftBig" data-animation-delay="200">Oups, somethings goes wrong !</h3>
+						<p class="lead wow fadeInRightBig" data-animation-delay="200">
+							It seems that there is no existing book with this ISBN. Please try to correct your
 							ISBN or perform an other search.
 						</p>
-					</div>
-					<div class="col-sm-6 wow fadeInRightBig center">
-						<img class="img-responsive " src="{% static 'flatfy/img/icon/search.svg' %}" alt="search.svg" class="book-list-img">
 					</div>
 				</div>
             </div>
@@ -301,7 +298,7 @@
                 <div class="row" >
                      <div class="col-md-6 col-md-offset-3 text-center wrap_title ">
                         <h2>What's new?</h2>
-                        <p class="lead" style="margin-top:0">The last books on this site.</p>
+                        <p class="lead" style="margin-top:0">The last books searched on this site.</p>
                      </div>
                   </div>
 

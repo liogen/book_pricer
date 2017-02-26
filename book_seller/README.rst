@@ -25,12 +25,6 @@ Todo:
 * Find a book
     * Write what is? page
         * Add a band with information about the site, number of books, number of offer collected, average price for a book
-    * If user click on find a book by isbn, you should scroll to the book list section and display a loading message during
-    retrieving of book information :
-        * If information are not stored in DB or not up-to-date, display a loading while crawler complete is job
-        * Display error message if needed
-            * no book title in DB mean that the book does not exist
-            * no offer in DB mean that we can not find the book
 * Book price comparison
     * Create chart that display price of a book
     * Display optimal price to sell a book

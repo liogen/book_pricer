@@ -25,20 +25,33 @@ class BlogSpider(scrapy.Spider):
 
     def parse(self, response):
 
+        current_book = Book.objects.get(isbn=getattr(self, 'isbn', None))
         tables = response.css("table.results-table-Logo")
-        book_title = response.css('#bd-isbn div.attributes div')[1].css('a strong span ::text').extract_first()
+        error = False
+        try:
+            book_title = response.css('#bd-isbn div.attributes div')[1].css('a strong span ::text').extract_first()
+        except IndexError:
+            error = True
+
+        if len(tables) == 0:
+            error = True
+
+        if error is True:
+            current_book.not_found = True
+            current_book.save()
+            return
         book_cover = response.css('img#coverImage ::attr(src)').extract_first()
         book_editor = response.css('span.describe-isbn ::text').extract_first().split(",")[0]
         book_distribution = response.css('span.describe-isbn ::text').extract_first().split(",")[1].replace(" ", "")
-        self.logger.info('book_title: %s', book_title)
+        # self.logger.info('book_title: %s', book_title)
         # self.logger.info('book_cover: %s', book_cover)
         # self.logger.info('book_editor: %s', book_editor)
         # self.logger.info('book_distribution: %s', book_distribution)
-        current_book = Book.objects.get(isbn=getattr(self, 'isbn', None))
         current_book.title = book_title
         current_book.cover_image = book_cover
         current_book.editor = book_editor
         current_book.distribution_date = book_distribution
+        current_book.not_found = False
         current_book.save()
         table_type = "0"
         if len(tables) == 1:
@@ -72,4 +85,4 @@ class BlogSpider(scrapy.Spider):
 
                     # yield offer
 
-            table_type = "used"
+            table_type = "1"
