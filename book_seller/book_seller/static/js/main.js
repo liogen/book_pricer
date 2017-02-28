@@ -17,6 +17,10 @@ jQuery(function($) {
                 $('#book-info-tab .section-heading').text(book_title);
                 $("#book-info-tab .img-responsive").attr("src", book_cover_image);
                 $("#book-info-tab .sub-title").text(book_editor + ", " + book_distribution_date);
+                google.charts.setOnLoadCallback(function () {
+                    console.log(json_book_info['chart_offers']);
+                    drawChart(json_book_info['chart_offers']);
+                });
                 $("#book-info-tab").removeClass("hidden");
                 $("#book-info-error").addClass("hidden");
             }
@@ -143,5 +147,28 @@ jQuery(function($) {
                 $("#book-info .book-info-offers").removeClass("hidden");
             }
         });
+
+        google.charts.load("current", {packages:['corechart']});
+
+        function drawChart(json_data) {
+            console.log(json_data);
+            var data = google.visualization.arrayToDataTable(json_data);
+
+            var view = new google.visualization.DataView(data);
+            view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+            var options = {
+                title: "Density of Precious Metals, in g/cm^3",
+                bar: {groupWidth: "95%"},
+                legend: { position: "top" },
+            };
+            var chart = new google.visualization.ColumnChart(document.getElementById("price-chart"));
+            chart.draw(view, options);
+        }
     });
 });

@@ -16,7 +16,7 @@ from django.http import JsonResponse
 from crawler.models import Book, Offer
 
 LOGGER = logging.getLogger(settings.LOGGER_NAME)
-SITE_NAME = 'BookSeller'
+SITE_NAME = 'BookPricer'
 SITE_DESCRIPTION = 'The easiest way to know the correct price of an used book'
 
 def get_book_information(book, json_response):
@@ -36,6 +36,17 @@ def get_book_information(book, json_response):
         used_offers,
         fields=('book', 'book_condition', 'vendor', 'country', 'description', 'price', 'shop_img', 'shop_link', ))
     json_response['total_offer_nb'] = total_offer_nb
+    chart_offers = {}
+    for condition in [new_offers, used_offers]:
+        for offer in condition:
+            if offer.price not in chart_offers:
+                chart_offers[offer.price] = 0
+            chart_offers[offer.price] += 1
+    LOGGER.error(chart_offers)
+    json_response['chart_offers'] = [["Price", "Distribution", { 'role': "style" }]]
+    for element in sorted(chart_offers):
+        json_response['chart_offers'].append([str(element), chart_offers[element], "silver"])
+    LOGGER.error(json_response['chart_offers'])
     return json_response
 
 class CrawlerView(View):

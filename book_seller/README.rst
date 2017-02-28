@@ -28,9 +28,6 @@ Todo:
 * Book price comparison
     * Create chart that display price of a book
     * Display optimal price to sell a book
-* Retrieve book information
-    * Scrap website to retrieve book title, author, editor, description, rating
-    * Add condition of the book that you want to sell
 * Write ads to sell book
     * With all information collected, create a ads to sell the book
     * Add 3 information photo to illustrate the book

@@ -275,7 +275,9 @@
 							<div class="sub-title lead3"></div>
 						</div>
 					</div>
-					<div class="book-info-prices hidden">12</div>
+					<div class="book-info-prices hidden col-sm-6 col-sm-offset-3">
+						<div id="price-chart" class="chart"></div>
+					</div>
 					<div class="book-info-offers hidden">13</div>
                 </div>
 
@@ -416,47 +418,6 @@
             </div>
         </div>
         <!-- /.container -->
-    </div>
-
-    <div class="content-section-b">
-
-		<div class="container">
-            <div class="row">
-                <div class="col-sm-6 wow fadeInLeftBig">
-                     <div id="owl-demo-1" class="owl-carousel">
-						<a href="{% static 'flatfy/img/iphone.png' %}" class="image-link">
-							<div class="item">
-								<img  class="img-responsive img-rounded" src="{% static 'flatfy/img/iphone.png' %}" alt="">
-							</div>
-						</a>
-						<a href="{% static 'flatfy/img/iphone.png' %}" class="image-link">
-							<div class="item">
-								<img  class="img-responsive img-rounded" src="{% static 'flatfy/img/iphone.png' %}" alt="">
-							</div>
-						</a>
-						<a href="{% static 'flatfy/img/iphone.png' %}" class="image-link">
-							<div class="item">
-								<img  class="img-responsive img-rounded" src="{% static 'flatfy/img/iphone.png' %}" alt="">
-							</div>
-						</a>
-					</div>
-                </div>
-
-                <div class="col-sm-6 wow fadeInRightBig"  data-animation-delay="200">
-                    <h3 class="section-heading">Drag Gallery</h3>
-					<div class="sub-title lead3">Lorem ipsum dolor sit atmet sit dolor greand fdanrh<br> sdfs sit atmet sit dolor greand fdanrh sdfs</div>
-                    <p class="lead">
-						In his igitur partibus duabus nihil erat, quod Zeno commuta rest gestiret.
-						Sed virtutem ipsam inchoavit, nihil ampliusuma. Scien tiam pollicentur,
-						uam non erat mirum sapientiae lorem cupido
-						patria esse cariorem. Quae qui non vident, nihilamane umquam magnum ac cognitione.
-					</p>
-
-					 <p><a class="btn btn-embossed btn-primary" href="#" role="button">View Details</a>
-					 <a class="btn btn-embossed btn-info" href="#" role="button">Visit Website</a></p>
-				</div>
-			</div>
-        </div>
     </div>
 
     <div class="content-section-a">
@@ -753,19 +714,19 @@
 	<script src="{% static 'flatfy/js/owl.carousel.js' %}"></script>
 	<script src="{% static 'flatfy/js/script.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
 	<!-- StikyMenu -->
 	<script src="{% static 'flatfy/js/stickUp.min.js' %}"></script>
-	<script type="text/javascript">
+	<script>
 	  jQuery(function($) {
 		$(document).ready( function() {
 		  $('.navbar-default').stickUp();
-
 		});
 	  });
 
 	</script>
 	<!-- Smoothscroll -->
-	<script type="text/javascript" src="{% static 'flatfy/js/jquery.corner.js' %}"></script>
+	<script src="{% static 'flatfy/js/jquery.corner.js' %}"></script>
 	<script src="{% static 'flatfy/js/wow.min.js' %}"></script>
 	<script>
 	 new WOW().init();

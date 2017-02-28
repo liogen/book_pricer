@@ -44,6 +44,11 @@
     margin: 0 auto;
 }
 
+.chart {
+    width: 100%;
+    min-height: 450px;
+}
+
 #book-info .book-info-navbar {
     margin-bottom: 30px;
 }
