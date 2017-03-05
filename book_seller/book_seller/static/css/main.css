@@ -23,7 +23,7 @@
 }
 
 #book-info {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 #book-list .book-list-img {
@@ -44,8 +44,12 @@
     margin: 0 auto;
 }
 
+.loading {
+    min-height: 450px;
+}
+
 .chart {
-    width: 100%;
+    margin-top: 30px;
     min-height: 450px;
 }
 

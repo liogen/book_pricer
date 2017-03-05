@@ -44,6 +44,7 @@ Todo:
     * Find a free DNS provider
     * Add nginx to project installation
     * Create a snap if relevant
+    * Deploy on github
 
 
 

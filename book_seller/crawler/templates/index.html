@@ -156,7 +156,6 @@
 					<li class="menuItem"><a href="#contact">Contact</a></li>-->
 				</ul>
 			</div>
-
 		</div>
 	</nav>
 
@@ -249,7 +248,7 @@
                 </div>
             </div>
 
-            <div class="container hidden" id="book-loading">
+            <div class="container hidden loading" id="book-loading">
                 <div class="row">
                     <div class="text-center">
                         <img class="img-responsive" src="{% static 'flatfy/img/status.gif' %}" alt="">
@@ -260,30 +259,20 @@
             <div class="container hidden" id="book-info">
 
                 <div class="row hidden" id="book-info-tab">
-					<ul class="book-info-navbar nav nav-tabs nav-justified">
-						<li role="presentation" class="active book-info-tab-description"><a href="">Book information</a></li>
-						<li role="presentation" class="book-info-tab-prices"><a href="">Book price comparison</a></li>
-						<li role="presentation" class="book-info-tab-offers"><a href="">Offers list</a></li>
-					</ul>
-					<div class="book-info-description">
-						<div class="col-sm-6 wow fadeInLeftBig">
-							<img class="img-responsive" src="" alt="book cover">
-						</div>
+					<h3 class="section-heading">Book information</h3>
+					<div class="col-sm-6 wow fadeInLeftBig">
+						<img class="img-responsive" src="" alt="book cover">
+					</div>
 
-						<div class="col-sm-6 wow fadeInRightBig" data-animation-delay="200">
-							<h3 class="section-heading"></h3>
-							<div class="sub-title lead3"></div>
-						</div>
+					<div class="col-sm-6 wow fadeInRightBig" data-animation-delay="200">
+						<h4 class="section-heading book_title"></h4>
+						<div class="sub-title lead3"></div>
 					</div>
-					<div class="book-info-prices hidden col-sm-6 col-sm-offset-3">
-						<div id="price-chart" class="chart"></div>
-					</div>
-					<div class="book-info-offers hidden">13</div>
                 </div>
 
 				<div class="row hidden" id="book-info-error">
 					<div class="col-sm-6 col-sm-offset-3">
-						<h3 class="section-heading wow fadeInLeftBig" data-animation-delay="200">Oups, somethings goes wrong !</h3>
+						<h4 class="section-heading wow fadeInLeftBig" data-animation-delay="200">Oups, somethings goes wrong !</h4>
 						<p class="lead wow fadeInRightBig" data-animation-delay="200">
 							It seems that there is no existing book with this ISBN. Please try to correct your
 							ISBN or perform an other search.
@@ -291,6 +280,11 @@
 					</div>
 				</div>
             </div>
+
+			<div class="row hidden" id="book-offers-tab">
+				<h3 class="section-heading">Offers distribution</h3>
+				<div id="price_chart" class="col-md-12 chart"></div>
+			</div>
         </div>
     </div>
      <div class="content-section-a" id="whats-new">
@@ -714,7 +708,6 @@
 	<script src="{% static 'flatfy/js/owl.carousel.js' %}"></script>
 	<script src="{% static 'flatfy/js/script.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-	<script src="https://www.gstatic.com/charts/loader.js"></script>
 	<!-- StikyMenu -->
 	<script src="{% static 'flatfy/js/stickUp.min.js' %}"></script>
 	<script>
@@ -736,6 +729,7 @@
 	<!-- Magnific Popup core JS file -->
 	<script src="{% static 'flatfy/js/jquery.magnific-popup.js' %}"></script>
 
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="{% static 'js/main.js' %}"></script>
 
 </body>

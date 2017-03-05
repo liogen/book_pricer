@@ -4,7 +4,9 @@
 
 """View that start crawler for justbook.fr"""
 
+import math
 import logging
+import statistics
 from scrapyd_api import ScrapydAPI
 from datetime import timedelta
 from django.views import View
@@ -18,6 +20,56 @@ from crawler.models import Book, Offer
 LOGGER = logging.getLogger(settings.LOGGER_NAME)
 SITE_NAME = 'BookPricer'
 SITE_DESCRIPTION = 'The easiest way to know the correct price of an used book'
+
+
+def get_chart_distribution(new_offers, used_offers):
+    max_price = 0
+    interval_size = 5
+    new_prices_array = []
+    used_prices_array = []
+    total_prices_array = []
+
+    for condition in [new_offers, used_offers]:
+        for offer in condition:
+            total_prices_array.append(offer.price)
+
+    offer_mean = statistics.mean(total_prices_array)
+    offer_stdev = statistics.stdev(total_prices_array)
+
+    for offer in new_offers:
+        if (offer_mean - 2 * offer_stdev) < offer.price < (offer_mean + 2 * offer_stdev):
+            new_prices_array.append(offer.price)
+            if offer.price > max_price:
+                max_price = offer.price
+
+    for offer in used_offers:
+        if (offer_mean - 2 * offer_stdev) < offer.price < (offer_mean + 2 * offer_stdev):
+            used_prices_array.append(offer.price)
+            if offer.price > max_price:
+                max_price = offer.price
+
+    max_price_rounded = math.ceil(max_price / 10) * 10
+    interval_number = int(max_price_rounded / interval_size)
+
+    new_offers_array = [0] * interval_number
+    used_offers_array = [0] * interval_number
+
+    for offer in new_prices_array:
+        position = int(offer / interval_size)
+        new_offers_array[position] += 1
+
+    for offer in used_prices_array:
+        position = int(offer / interval_size)
+        used_offers_array[position] += 1
+
+    array_chart_offers = [["Price", "New offers", "Used offers"]]
+
+    for i in range(len(new_offers_array)):
+        column_name = "%s-%s€" % (i * interval_size, (i + 1) * interval_size)
+        array_chart_offers.append([column_name, new_offers_array[i], used_offers_array[i]])
+
+    return array_chart_offers
+
 
 def get_book_information(book, json_response):
     new_offers = Offer.objects.filter(book=book, book_condition=Offer.NEW)
@@ -36,18 +88,9 @@ def get_book_information(book, json_response):
         used_offers,
         fields=('book', 'book_condition', 'vendor', 'country', 'description', 'price', 'shop_img', 'shop_link', ))
     json_response['total_offer_nb'] = total_offer_nb
-    chart_offers = {}
-    for condition in [new_offers, used_offers]:
-        for offer in condition:
-            if offer.price not in chart_offers:
-                chart_offers[offer.price] = 0
-            chart_offers[offer.price] += 1
-    LOGGER.error(chart_offers)
-    json_response['chart_offers'] = [["Price", "Distribution", { 'role': "style" }]]
-    for element in sorted(chart_offers):
-        json_response['chart_offers'].append([str(element), chart_offers[element], "silver"])
-    LOGGER.error(json_response['chart_offers'])
+    json_response['chart_offers'] = get_chart_distribution(new_offers, used_offers)
     return json_response
+
 
 class CrawlerView(View):
 
