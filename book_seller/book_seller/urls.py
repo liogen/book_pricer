@@ -18,10 +18,12 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls.static import static
 from crawler.views import CrawlerView, ISBNInfoView
+from ads_generator.views import AdsGeneratorView
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', CrawlerView.as_view()),
     url(r'^isbn/(?P<isbn>.*)/', ISBNInfoView.as_view()),
+    url(r'^ads_generator/', AdsGeneratorView.as_view()),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

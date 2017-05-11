@@ -15,11 +15,11 @@ INSTALLED_APPS += [  # noqa
 #     'django_nose',
 #     'behave_django',
 #     'stubs',
-    'livereload',
+#     'livereload',
 ]
 
 MIDDLEWARE += [
-    'livereload.middleware.LiveReloadScript',
+    # 'livereload.middleware.LiveReloadScript',
 ]
 
 

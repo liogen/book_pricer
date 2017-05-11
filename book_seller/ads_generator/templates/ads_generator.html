@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books ads generator</title>
+</head>
+<body>
+    <h2>{{ title }}
+    </h2>
+    <p style="font-size: 14px;">
+        {{ intro }} La valeur du pack neuf est estimée à
+        <b>{{ prices.actual_price }}</b>. Ce pack est vendu à <b>{{ prices.selling_price }}</b>, soit une économie
+        de <b>{{ prices.reduction_price }} (-{{ prices.reduction_percentage }}).</b>
+    </p>
+
+    <p>
+        Les frais de port sont gratuits.
+    </p>
+
+    <p>
+        Ce pack contient {{ books|length }} livres :
+    </p>
+
+    <ol>
+        {% for book in books %}
+        <li>
+
+            <h3>{{ book.title }}</h3>
+            <p>{{ book.status }}, prix neuf : <b>{{ book.actual_price }}</b></p>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="{{ book.pictures }}" alt="Book picture" style="height:150px;">
+                        </td>
+                        <td>
+                            {{ book.description}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </li>
+        {% endfor %}
+    </ol>
+</body>
+</html>

@@ -33,8 +33,12 @@ def get_chart_distribution(new_offers, used_offers):
         for offer in condition:
             total_prices_array.append(offer.price)
 
-    offer_mean = statistics.mean(total_prices_array)
-    offer_stdev = statistics.stdev(total_prices_array)
+    try:
+        offer_mean = statistics.mean(total_prices_array)
+        offer_stdev = statistics.stdev(total_prices_array)
+    except statistics.StatisticsError:
+        offer_mean = 0
+        offer_stdev = 0
 
     for offer in new_offers:
         if (offer_mean - 2 * offer_stdev) < offer.price < (offer_mean + 2 * offer_stdev):
@@ -49,7 +53,7 @@ def get_chart_distribution(new_offers, used_offers):
                 max_price = offer.price
 
     max_price_rounded = math.ceil(max_price / 10) * 10
-    interval_number = int(max_price_rounded / interval_size)
+    interval_number = int(max_price_rounded / interval_size) + 1
 
     new_offers_array = [0] * interval_number
     used_offers_array = [0] * interval_number
@@ -68,13 +72,20 @@ def get_chart_distribution(new_offers, used_offers):
         column_name = "%s-%s€" % (i * interval_size, (i + 1) * interval_size)
         array_chart_offers.append([column_name, new_offers_array[i], used_offers_array[i]])
 
-    return array_chart_offers
+    try:
+        new_mean = statistics.mean(used_prices_array)
+    except statistics.StatisticsError:
+        new_mean = 0
+
+    return array_chart_offers, new_mean
 
 
 def get_book_information(book, json_response):
-    new_offers = Offer.objects.filter(book=book, book_condition=Offer.NEW)
-    used_offers = Offer.objects.filter(book=book, book_condition=Offer.USED)
+    new_offers = Offer.objects.filter(book=book, book_condition=Offer.NEW).order_by('price')
+    used_offers = Offer.objects.filter(book=book, book_condition=Offer.USED).order_by('price')
     total_offer_nb = len(new_offers) + len(used_offers)
+    json_response['lowest_new_price'] = None
+    json_response['lowest_used_price'] = None
     json_response['book_title'] = book.title
     json_response['cover_image'] = book.cover_image
     json_response['editor'] = book.editor
@@ -88,7 +99,14 @@ def get_book_information(book, json_response):
         used_offers,
         fields=('book', 'book_condition', 'vendor', 'country', 'description', 'price', 'shop_img', 'shop_link', ))
     json_response['total_offer_nb'] = total_offer_nb
-    json_response['chart_offers'] = get_chart_distribution(new_offers, used_offers)
+    chart_offers, median_offers = get_chart_distribution(new_offers, used_offers)
+    json_response['chart_offers'] = chart_offers
+    json_response['median_offers'] = "%.2f" % median_offers
+    if len(new_offers) > 0:
+        json_response['lowest_new_price'] = new_offers[0].price
+    if len(used_offers) > 0:
+        json_response['lowest_used_price'] = used_offers[0].price
+
     return json_response
 
 

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'just_book',
     'crawler',
+    'ads_generator',
 ]
 
 MIDDLEWARE = [

@@ -14,9 +14,17 @@ jQuery(function($) {
                 book_cover_image = 'cover_image' in json_book_info ? json_book_info['cover_image'] : null;
                 book_editor = 'editor' in json_book_info ? json_book_info['editor'] : null;
                 book_distribution_date = 'distribution_date' in json_book_info ? json_book_info['distribution_date'] : null;
+                book_median_prices = 'median_offers' in json_book_info ? json_book_info['median_offers'] : null;
+                offers_number = 'total_offer_nb' in json_book_info ? json_book_info['total_offer_nb'] : null;
+                lowest_new_price = 'lowest_new_price' in json_book_info ? json_book_info['lowest_new_price'] : null;
+                lowest_used_price = 'lowest_used_price' in json_book_info ? json_book_info['lowest_used_price'] : null;
                 $('#book-info-tab .book_title').text(book_title);
                 $("#book-info-tab .img-responsive").attr("src", book_cover_image);
-                $("#book-info-tab .sub-title").text(book_editor + ", " + book_distribution_date);
+                $("#book-info-tab .book_editor").text(book_editor + ", " + book_distribution_date);
+                $("#book-info-tab .median_price span").text(book_median_prices);
+                $("#book-info-tab .offers_number span").text(offers_number);
+                $("#book-info-tab .lowest_new_price span").text(lowest_new_price);
+                $("#book-info-tab .lowest_used_price span").text(lowest_used_price);
                 $("#book-info-tab").removeClass("hidden");
                 $("#book-offers-tab").removeClass("hidden");
                 $("#book-info-error").addClass("hidden");
