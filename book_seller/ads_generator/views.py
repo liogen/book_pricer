@@ -13,18 +13,16 @@ from django.conf import settings
 from django.shortcuts import render
 
 LOGGER = logging.getLogger(settings.LOGGER_NAME)
-CSV_URL = 'https://docs.google.com/spreadsheets/d/1sqAJ-RDP_-K1jgsbhroYXs65n' \
-          'QSPhoRvXhadCO7dB4o/pub?gid=1989620233&single=true&output=csv'
-CSV_URL = 'https://docs.google.com/spreadsheets/d/1sqAJ-RDP_-K1jgsbhroYXs65n' \
-          'QSPhoRvXhadCO7dB4o/pub?gid=1989620233&single=true&output=csv'
 
 
 def get_ads_information():
+    csv_url = 'https://docs.google.com/spreadsheets/d/1sqAJ-RDP_-K1jgsbhroYXs'\
+              '65nQSPhoRvXhadCO7dB4o/pub?gid=1989620233&single=true&output=csv'
 
     data = {
         "books": []
     }
-    webpage = urllib.request.urlopen(CSV_URL)
+    webpage = urllib.request.urlopen(csv_url)
     datareader = csv.reader(webpage.read().decode('utf-8').splitlines())
 
     first_row = True

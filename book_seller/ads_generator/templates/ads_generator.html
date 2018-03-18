@@ -7,14 +7,14 @@
 <body>
     <h2>{{ title }}
     </h2>
-    <p style="font-size: 14px;">
+    <p>
         {{ intro }} La valeur du pack neuf est estimée à
         <b>{{ prices.actual_price }}</b>. Ce pack est vendu à <b>{{ prices.selling_price }}</b>, soit une économie
         de <b>{{ prices.reduction_price }} (-{{ prices.reduction_percentage }}).</b>
     </p>
 
     <p>
-        Les frais de port sont gratuits.
+        Les frais de port sont gratuits. N'hésitez pas à prendre contact avec nous si vous désirez plus d'information sur les livres.
     </p>
 
     <p>
@@ -31,9 +31,11 @@
                 <tbody>
                     <tr>
                         <td>
-                            <img src="{{ book.pictures }}" alt="Book picture" style="height:150px;">
+                            <a href="{{ book.pictures }}" target="_blank">
+                                <img src="{{ book.pictures }}" alt="Book picture" style="height:150px;">
+                            </a>
                         </td>
-                        <td>
+                        <td style="padding-right: 50px; padding-left: 50px;">
                             {{ book.description}}
                         </td>
                     </tr>
