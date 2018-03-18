@@ -6,6 +6,7 @@ Command
 * pip install python-scrapyd-api
 * pip install scrapyd
 * pip install 'git+https://github.com/scrapy/scrapyd-client.git@1.1.0dev'
+* pip install django 1.10
 * scrapyd
 * scrapyd-deploy -l
 * scrapyd-deploy default -p justbookcrawler
