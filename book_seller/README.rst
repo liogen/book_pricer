@@ -20,13 +20,6 @@ Command
     * http://marcela-campo.blogspot.fr/2015/03/scraping-website-using-scrapy-and-django.html
     * http://stackoverflow.com/questions/19068308/access-django-models-with-scrapy-defining-path-to-django-project
 
-Todo:
------
-
-* Code cleaning and test
-    * Pass prospector code on python
-    * Add setup.py to install code
-    * Deploy on github
 
 
 

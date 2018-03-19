@@ -70,3 +70,8 @@ Quality
 * pip install flake8 prospector
 * flake8 --exclude "justbookcrawler/build/"
 * prospector -F
+
+Todo
+* Fix crawler problem
+* Correct code climate error
+* Write Readme

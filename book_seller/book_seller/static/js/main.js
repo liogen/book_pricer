@@ -119,21 +119,21 @@ jQuery(function($) {
         }
 
         $("#isbn-submit-top").click(function(event) {
+            event.preventDefault();
             isbn = $("#isbn-value-top").val();
             if (isbn === "") {
                 return;
             }
-            event.preventDefault();
             $("#isbn-value-middle").val(isbn);
             postISBN(isbn, displayBook)
         });
 
         $("#isbn-submit-middle").click(function(event) {
+            event.preventDefault();
             isbn = $("#isbn-value-middle").val();
             if (isbn === "") {
                 return;
             }
-            event.preventDefault();
             $("#isbn-value-top").val(isbn);
             postISBN(isbn, displayBook)
         });

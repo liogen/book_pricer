@@ -140,10 +140,12 @@ class CrawlerView(View):
 
     def post(self, request, *args, **kwargs):  # noqa
         json_response = {}
-        isbn = request.POST.get('isbn', "error")
+        isbn = request.POST.get('isbn', 'error')
+        LOGGER.info('request.POST: {0}'.format(request.POST))
+        LOGGER.info('isbn: {0}'.format(isbn))
         start_crawler = False
 
-        if isbn not in ["error"]:
+        if isbn not in ['error']:
             book = None
             try:
                 book = Book.objects.get(isbn=isbn)
