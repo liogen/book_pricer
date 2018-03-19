@@ -23,9 +23,8 @@ ratings:
   paths:
   - "**.py"
 exclude_paths:
-- "*/migrations/*.py"
-- "*/static/admin/js/*.js"
-- "*/static/admin/js/admin/*.js"
-- "*/static/admin/css/*"
-- "*/static/flatfy/*"
-- "justbookcrawler/build/*"
+- "**/migrations/"
+- "**/static/admin/js/"
+- "**/static/admin/css/"
+- "**/static/flatfy/"
+- "justbookcrawler/build/"
