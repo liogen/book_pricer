@@ -56,3 +56,17 @@ sudo apt-get lsscrapyd-deploy
 * scrapyd-deploy -l
 * scrapyd-deploy default -p justbookcrawler
 * pip install django-livereload-server
+
+Interface
+* Dexrption and features
+
+Admin
+* URL
+* Login and password
+* Quick presentation
+
+Quality
+* Prospector
+* pip install flake8 prospector
+* flake8 --exclude "justbookcrawler/build/"
+* prospector -F

@@ -16,10 +16,15 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Offer',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('book_condition', models.CharField(blank=True, choices=[('0', 'Neuf'), ('1', 'Occassion')], max_length=2, null=True)),
-                ('vendor', models.CharField(blank=True, max_length=200, null=True)),
-                ('country', models.CharField(blank=True, max_length=200, null=True)),
+                ('id', models.AutoField(auto_created=True, primary_key=True,
+                                        serialize=False, verbose_name='ID')),
+                ('book_condition', models.CharField(
+                    blank=True, choices=[('0', 'Neuf'), ('1', 'Occassion')],
+                    max_length=2, null=True)),
+                ('vendor', models.CharField(blank=True, max_length=200,
+                                            null=True)),
+                ('country', models.CharField(blank=True, max_length=200,
+                                             null=True)),
                 ('description', models.TextField(blank=True, null=True)),
                 ('price', models.FloatField(blank=True, null=True)),
                 ('shop_img', models.URLField(blank=True, null=True)),
@@ -62,6 +67,8 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='offer',
             name='book',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='crawler.Book'),
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                to='crawler.Book'),
         ),
     ]

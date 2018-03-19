@@ -4,7 +4,7 @@
 
 """View that display ads according to spreadsheet configuration"""
 
-import io
+# import io
 import csv
 import urllib.request
 import logging
@@ -54,6 +54,6 @@ class AdsGeneratorView(View):
 
     template_name = 'ads_generator.html'
 
-    def get(self, request, *args, **kwargs):
+    def get(self, request, *args, **kwargs):  # noqa
         data = get_ads_information()
         return render(request, self.template_name, data)

@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '61#!!_=ig3^d@&e%16!9%us*3#w8i==c1w37l-wa8g*^=tzba_'
+SECRET_KEY = '61#!!_=ig3^d@&e%16!9%us*3#w8i==c1w37l-wa8g*^=tzba_'  # noqa
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -89,16 +89,16 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',  # noqa
     },
 ]
 
@@ -133,7 +133,7 @@ LOGGING = {
     'disable_existing_loggers': False,
     'formatters': {
         'verbose': {
-            "format": "%(asctime)s - %(filename)s - %(funcName)s - %(levelname)s - %(message)s",
+            "format": "%(asctime)s - %(filename)s - %(funcName)s - %(levelname)s - %(message)s",  # noqa
             "datefmt": "%Y-%m-%d %H:%M:%S"
         },
         'simple': {

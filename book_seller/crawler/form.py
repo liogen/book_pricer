@@ -9,17 +9,19 @@ from django import forms
 
 class TopBookForm(forms.Form):
 
-    isbn = forms.CharField(label='ISBN', max_length=100,
-                           widget=forms.TextInput(attrs={'placeholder': 'Enter your ISBN. Ex: 978-2-84933-377-8',
-                                                         'class': 'form-control wow fadeIn',
-                                                         'data-wow-delay': '1.0s',
-                                                         'id': 'isbn-value-top'}))
+    isbn = forms.CharField(
+        label='ISBN', max_length=100, widget=forms.TextInput(attrs={
+            'placeholder': 'Enter your ISBN. Ex: 978-2-84933-377-8',
+            'class': 'form-control wow fadeIn',
+            'data-wow-delay': '1.0s',
+            'id': 'isbn-value-top'}))
 
 
 class MiddleBookForm(forms.Form):
 
-    isbn = forms.CharField(label='ISBN', max_length=100,
-                           widget=forms.TextInput(attrs={'placeholder': 'Enter your ISBN. Ex: 978-2-84933-377-8',
-                                                         'class': 'form-control wow fadeIn',
-                                                         'data-wow-delay': '1.0s',
-                                                         'id': 'isbn-value-middle'}))
+    isbn = forms.CharField(
+        label='ISBN', max_length=100, widget=forms.TextInput(attrs={
+            'placeholder': 'Enter your ISBN. Ex: 978-2-84933-377-8',
+            'class': 'form-control wow fadeIn',
+            'data-wow-delay': '1.0s',
+            'id': 'isbn-value-middle'}))

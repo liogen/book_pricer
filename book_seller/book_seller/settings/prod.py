@@ -18,12 +18,12 @@ INSTALLED_APPS += [  # noqa
 #     'livereload',
 ]
 
-MIDDLEWARE += [
-    # 'livereload.middleware.LiveReloadScript',
+MIDDLEWARE += [  # noqa
+    # 'livereload.middleware.LiveReloadScript',
 ]
 
 
-ALLOWED_HOSTS += ["192.168.0.253", "127.0.0.1"]
+ALLOWED_HOSTS += ["192.168.0.253", "127.0.0.1"]  # noqa
 
 #####
 # Logging configuration

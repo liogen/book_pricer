@@ -40,7 +40,8 @@ class Offer(models.Model):
     )
 
     book = models.ForeignKey(Book)
-    book_condition = models.CharField(max_length=2, choices=BOOK_CONDITION, null=True,blank=True)
+    book_condition = models.CharField(max_length=2, choices=BOOK_CONDITION,
+                                      null=True, blank=True)
     vendor = models.CharField(max_length=200, null=True, blank=True)
     country = models.CharField(max_length=200, null=True, blank=True)
     description = models.TextField(null=True, blank=True)

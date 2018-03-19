@@ -22,7 +22,10 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='book',
             name='created_at',
-            field=models.DateTimeField(auto_now_add=True, default=datetime.datetime(2017, 2, 22, 21, 11, 59, 839991, tzinfo=utc)),
+            field=models.DateTimeField(
+                auto_now_add=True,
+                default=datetime.datetime(2017, 2, 22, 21, 11, 59, 839991,
+                                          tzinfo=utc)),
             preserve_default=False,
         ),
         migrations.AddField(

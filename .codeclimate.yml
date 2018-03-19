@@ -28,3 +28,4 @@ exclude_paths:
 - "*static/admin/js/admin/*.js"
 - "*static/admin/css/*"
 - "*static/flatfy/*"
+- "justbookcrawler/build/*"

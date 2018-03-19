@@ -23,57 +23,68 @@ SITE_DESCRIPTION = 'The easiest way to know the correct price of an used book'
 
 
 def get_chart_distribution(new_offers, used_offers):
-    max_price = 0
-    interval_size = 5
-    new_prices_array = []
-    used_prices_array = []
-    total_prices_array = []
+    prices_info = {
+        'max_price': 0,
+        'interval_size': 5,
+        'new_prices_array': [],
+        'used_prices_array': [],
+        'total_prices_array': [],
+        'offer_mean': 0,
+        'offer_stdev': 0
+    }
 
     for condition in [new_offers, used_offers]:
         for offer in condition:
-            total_prices_array.append(offer.price)
+            prices_info['total_prices_array'].append(offer.price)
 
     try:
-        offer_mean = statistics.mean(total_prices_array)
-        offer_stdev = statistics.stdev(total_prices_array)
+        prices_info['offer_mean'] = statistics.mean(
+            prices_info['total_prices_array'])
+        prices_info['offer_stdev'] = statistics.stdev(
+            prices_info['total_prices_array'])
     except statistics.StatisticsError:
-        offer_mean = 0
-        offer_stdev = 0
+        prices_info['offer_mean'] = 0
+        prices_info['offer_stdev'] = 0
 
+    lower_bound = prices_info['offer_mean'] - 2 * prices_info[
+        'offer_stdev']
+    upper_bound = prices_info['offer_mean'] + 2 * prices_info[
+        'offer_stdev']
     for offer in new_offers:
-        if (offer_mean - 2 * offer_stdev) < offer.price < (offer_mean + 2 * offer_stdev):
-            new_prices_array.append(offer.price)
-            if offer.price > max_price:
-                max_price = offer.price
+        if lower_bound < offer.price < upper_bound:
+            prices_info['new_prices_array'].append(offer.price)
+            if offer.price > prices_info['max_price']:
+                prices_info['max_price'] = offer.price
 
     for offer in used_offers:
-        if (offer_mean - 2 * offer_stdev) < offer.price < (offer_mean + 2 * offer_stdev):
-            used_prices_array.append(offer.price)
-            if offer.price > max_price:
-                max_price = offer.price
+        if lower_bound < offer.price < upper_bound:
+            prices_info['used_prices_array'].append(offer.price)
+            if offer.price > prices_info['max_price']:
+                prices_info['max_price'] = offer.price
 
-    max_price_rounded = math.ceil(max_price / 10) * 10
-    interval_number = int(max_price_rounded / interval_size) + 1
+    max_price_rounded = math.ceil(prices_info['max_price'] / 10) * 10
+    interval_number = int(max_price_rounded / prices_info['interval_size']) + 1
 
     new_offers_array = [0] * interval_number
     used_offers_array = [0] * interval_number
 
-    for offer in new_prices_array:
-        position = int(offer / interval_size)
-        new_offers_array[position] += 1
+    for offer in prices_info['new_prices_array']:
+        new_offers_array[int(offer / prices_info['interval_size'])] += 1
 
-    for offer in used_prices_array:
-        position = int(offer / interval_size)
-        used_offers_array[position] += 1
+    for offer in prices_info['used_prices_array']:
+        used_offers_array[int(offer / prices_info['interval_size'])] += 1
 
     array_chart_offers = [["Price", "New offers", "Used offers"]]
 
     for i in range(len(new_offers_array)):
-        column_name = "%s-%s€" % (i * interval_size, (i + 1) * interval_size)
-        array_chart_offers.append([column_name, new_offers_array[i], used_offers_array[i]])
+        column_name = "%s-%s€" % (
+            i * prices_info['interval_size'],
+            (i + 1) * prices_info['interval_size'])
+        array_chart_offers.append([column_name, new_offers_array[i],
+                                   used_offers_array[i]])
 
     try:
-        new_mean = statistics.mean(used_prices_array)
+        new_mean = statistics.mean(prices_info['used_prices_array'])
     except statistics.StatisticsError:
         new_mean = 0
 
@@ -81,8 +92,10 @@ def get_chart_distribution(new_offers, used_offers):
 
 
 def get_book_information(book, json_response):
-    new_offers = Offer.objects.filter(book=book, book_condition=Offer.NEW).order_by('price')
-    used_offers = Offer.objects.filter(book=book, book_condition=Offer.USED).order_by('price')
+    new_offers = Offer.objects.filter(
+        book=book, book_condition=Offer.NEW).order_by('price')
+    used_offers = Offer.objects.filter(
+        book=book, book_condition=Offer.USED).order_by('price')
     total_offer_nb = len(new_offers) + len(used_offers)
     json_response['lowest_new_price'] = None
     json_response['lowest_used_price'] = None
@@ -93,18 +106,21 @@ def get_book_information(book, json_response):
     json_response['new_offers'] = serializers.serialize(
         'json',
         new_offers,
-        fields=('book', 'book_condition', 'vendor', 'country', 'description', 'price', 'shop_img', 'shop_link', ))
+        fields=('book', 'book_condition', 'vendor', 'country', 'description',
+                'price', 'shop_img', 'shop_link', ))
     json_response['used_offers'] = serializers.serialize(
         'json',
         used_offers,
-        fields=('book', 'book_condition', 'vendor', 'country', 'description', 'price', 'shop_img', 'shop_link', ))
+        fields=('book', 'book_condition', 'vendor', 'country', 'description',
+                'price', 'shop_img', 'shop_link', ))
     json_response['total_offer_nb'] = total_offer_nb
-    chart_offers, median_offers = get_chart_distribution(new_offers, used_offers)
+    chart_offers, median_offers = get_chart_distribution(new_offers,
+                                                         used_offers)
     json_response['chart_offers'] = chart_offers
     json_response['median_offers'] = "%.2f" % median_offers
-    if len(new_offers) > 0:
+    if new_offers:
         json_response['lowest_new_price'] = new_offers[0].price
-    if len(used_offers) > 0:
+    if used_offers:
         json_response['lowest_used_price'] = used_offers[0].price
 
     return json_response
@@ -115,14 +131,14 @@ class CrawlerView(View):
     initial = {'SITE_NAME': SITE_NAME, 'SITE_DESCRIPTION': SITE_DESCRIPTION}
     template_name = 'index.html'
 
-    def get(self, request, *args, **kwargs):
+    def get(self, request, *args, **kwargs):  # noqa
         books = Book.objects.filter(title__isnull=False).order_by("-id")
         self.initial['books'] = books[:8]
         self.initial['books_length'] = len(books)
         self.initial['books_limit'] = 8
         return render(request, self.template_name, self.initial)
 
-    def post(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):  # noqa
         json_response = {}
         isbn = request.POST.get('isbn', "error")
         start_crawler = False
@@ -156,12 +172,14 @@ class CrawlerView(View):
 
 class ISBNInfoView(View):
 
-    def get(self, request, *args, **kwargs):
+    def get(self, request, *args, **kwargs):  # noqa
         isbn = kwargs['isbn']
         json_response = {}
         crawler_started = True
         error_404 = JsonResponse({
-            "isbn": isbn, "status_code" : 404, "error" : "The resource was not found"}, status=404)
+            "isbn": isbn,
+            "status_code": 404,
+            "error": "The resource was not found"}, status=404)
         try:
             book = Book.objects.get(isbn=isbn)
         except Book.DoesNotExist:
