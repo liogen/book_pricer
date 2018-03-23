@@ -7,7 +7,7 @@
 from book_seller.settings.base import *  # noqa
 
 #####
-# Timevortex configuration
+# Book_seller configuration
 #
 DEBUG = True
 
@@ -31,3 +31,9 @@ ALLOWED_HOSTS += ["192.168.0.253", "127.0.0.1"]  # noqa
 LOG_BASE_FOLDER = "/tmp"
 LOGGING['handlers']['file']['filename'] = '%s/%s.log' % (LOG_BASE_FOLDER, LOGGER_NAME)  # noqa
 LOGGING['loggers'][LOGGER_NAME]['level'] = 'DEBUG'  # noqa
+
+#####
+# Scrapy configuration
+#
+
+SCRAPY_URL = 'http://localhost:6800'

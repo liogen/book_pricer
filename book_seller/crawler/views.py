@@ -163,7 +163,7 @@ class CrawlerView(View):
                 start_crawler = True
 
             if start_crawler is True:
-                scrapyd = ScrapydAPI('http://localhost:6800')
+                scrapyd = ScrapydAPI(settings.SCRAPY_URL)
                 scrapyd.schedule('justbookcrawler', 'justbook', isbn=isbn)
 
         json_response['isbn'] = isbn
