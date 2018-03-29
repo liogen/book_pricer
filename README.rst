@@ -80,7 +80,6 @@ Scrapy configuration
 
 .. code-block:: bash
 
-    $ sudo apt-get scrapyd-deploy
     $ pip install python-scrapyd-api scrapyd 'git+https://github.com/scrapy/scrapyd-client.git@1.1.0dev'
     $ scrapyd
     $ scrapyd-deploy -l

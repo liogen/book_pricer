@@ -4,7 +4,7 @@ python:
   - "3.5"
 before_install:
   - sudo apt-get update
-  - sudo apt-get install sqlite3 supervisor scrapyd-deploy
+  - sudo apt-get install sqlite3 supervisor
 install:
   - pip install -r requirements.txt
 before_script:
