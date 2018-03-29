@@ -22,7 +22,7 @@ SITE_NAME = 'BookPricer'
 SITE_DESCRIPTION = 'The easiest way to know the correct price of an used book'
 
 
-def get_chart_distribution(new_offers, used_offers):
+def price_info_creation(new_offers, used_offers):
     prices_info = {
         'max_price': 0,
         'interval_size': 5,
@@ -50,17 +50,20 @@ def get_chart_distribution(new_offers, used_offers):
         'offer_stdev']
     upper_bound = prices_info['offer_mean'] + 2 * prices_info[
         'offer_stdev']
-    for offer in new_offers:
-        if lower_bound < offer.price < upper_bound:
-            prices_info['new_prices_array'].append(offer.price)
-            if offer.price > prices_info['max_price']:
-                prices_info['max_price'] = offer.price
 
-    for offer in used_offers:
-        if lower_bound < offer.price < upper_bound:
-            prices_info['used_prices_array'].append(offer.price)
-            if offer.price > prices_info['max_price']:
-                prices_info['max_price'] = offer.price
+    for target_array, target_key in ((new_offers, 'new_prices_array'),
+                                     (used_offers, 'used_prices_array')):
+        for offer in target_array:
+            if lower_bound < offer.price < upper_bound:
+                prices_info[target_key].append(offer.price)
+                if offer.price > prices_info['max_price']:
+                    prices_info['max_price'] = offer.price
+    return prices_info
+
+
+def get_chart_distribution(new_offers, used_offers):
+
+    prices_info = price_info_creation(new_offers, used_offers)
 
     max_price_rounded = math.ceil(prices_info['max_price'] / 10) * 10
     interval_number = int(max_price_rounded / prices_info['interval_size']) + 1
@@ -68,11 +71,10 @@ def get_chart_distribution(new_offers, used_offers):
     new_offers_array = [0] * interval_number
     used_offers_array = [0] * interval_number
 
-    for offer in prices_info['new_prices_array']:
-        new_offers_array[int(offer / prices_info['interval_size'])] += 1
-
-    for offer in prices_info['used_prices_array']:
-        used_offers_array[int(offer / prices_info['interval_size'])] += 1
+    for target_key, target_array in (('new_prices_array', new_offers_array),
+                                     ('used_prices_array', used_offers_array)):
+        for offer in prices_info[target_key]:
+            target_array[int(offer / prices_info['interval_size'])] += 1
 
     array_chart_offers = [["Price", "New offers", "Used offers"]]
 
@@ -91,33 +93,40 @@ def get_chart_distribution(new_offers, used_offers):
     return array_chart_offers, new_mean
 
 
-def get_book_information(book, json_response):
+def offer_serialization(new_offers, used_offers):
+    new_offers_serialized = serializers.serialize(
+        'json', new_offers,
+        fields=('book', 'book_condition', 'vendor', 'country', 'description',
+                'price', 'shop_img', 'shop_link',))
+    used_offers_serialized = serializers.serialize(
+        'json', used_offers,
+        fields=('book', 'book_condition', 'vendor', 'country', 'description',
+                'price', 'shop_img', 'shop_link',))
+    return new_offers_serialized, used_offers_serialized
+
+
+def get_book_information(book):
     new_offers = Offer.objects.filter(
         book=book, book_condition=Offer.NEW).order_by('price')
     used_offers = Offer.objects.filter(
         book=book, book_condition=Offer.USED).order_by('price')
-    total_offer_nb = len(new_offers) + len(used_offers)
-    json_response['lowest_new_price'] = None
-    json_response['lowest_used_price'] = None
-    json_response['book_title'] = book.title
-    json_response['cover_image'] = book.cover_image
-    json_response['editor'] = book.editor
-    json_response['distribution_date'] = book.distribution_date
-    json_response['new_offers'] = serializers.serialize(
-        'json',
-        new_offers,
-        fields=('book', 'book_condition', 'vendor', 'country', 'description',
-                'price', 'shop_img', 'shop_link', ))
-    json_response['used_offers'] = serializers.serialize(
-        'json',
-        used_offers,
-        fields=('book', 'book_condition', 'vendor', 'country', 'description',
-                'price', 'shop_img', 'shop_link', ))
-    json_response['total_offer_nb'] = total_offer_nb
+    new_offers_json, used_offers_json = offer_serialization(new_offers,
+                                                            used_offers)
     chart_offers, median_offers = get_chart_distribution(new_offers,
                                                          used_offers)
-    json_response['chart_offers'] = chart_offers
-    json_response['median_offers'] = "%.2f" % median_offers
+    json_response = {
+        'lowest_new_price': None,
+        'lowest_used_price': None,
+        'book_title': book.title,
+        'cover_image': book.cover_image,
+        'editor': book.editor,
+        'distribution_date' :book.distribution_date,
+        'new_offers': new_offers_json,
+        'used_offers': used_offers_json,
+        'total_offer_nb': len(new_offers) + len(used_offers),
+        'chart_offers': chart_offers,
+        'median_offers': "%.2f" % median_offers
+    }
     if new_offers:
         json_response['lowest_new_price'] = new_offers[0].price
     if used_offers:
@@ -158,7 +167,7 @@ class CrawlerView(View):
                         offer.delete()
                     start_crawler = True
                 else:
-                    json_response = get_book_information(book, json_response)
+                    json_response = get_book_information(book)
             else:
                 start_crawler = True
 

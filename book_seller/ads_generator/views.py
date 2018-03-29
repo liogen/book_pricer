@@ -15,20 +15,13 @@ from django.shortcuts import render
 LOGGER = logging.getLogger(settings.LOGGER_NAME)
 
 
-def get_ads_information():
-    csv_url = 'https://docs.google.com/spreadsheets/d/1sqAJ-RDP_-K1jgsbhroYXs'\
-              '65nQSPhoRvXhadCO7dB4o/pub?gid=1989620233&single=true&output=csv'
-
+def data_population(datareader):
+    first_row = True
     data = {
         "books": []
     }
-    webpage = urllib.request.urlopen(csv_url)
-    datareader = csv.reader(webpage.read().decode('utf-8').splitlines())
-
-    first_row = True
 
     for row in datareader:
-        LOGGER.error(row)
         if first_row:
             data["title"] = row[0]
             data["intro"] = row[1]
@@ -47,7 +40,15 @@ def get_ads_information():
             })
         first_row = False
 
-    return data
+
+def get_ads_information():
+    csv_url = 'https://docs.google.com/spreadsheets/d/1sqAJ-RDP_-K1jgsbhroYXs'\
+              '65nQSPhoRvXhadCO7dB4o/pub?gid=1989620233&single=true&output=csv'
+
+    webpage = urllib.request.urlopen(csv_url)
+    datareader = csv.reader(webpage.read().decode('utf-8').splitlines())
+
+    return data_population(datareader)
 
 
 class AdsGeneratorView(View):

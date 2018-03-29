@@ -118,24 +118,23 @@ jQuery(function($) {
             });
         }
 
-        $("#isbn-submit-top").click(function(event) {
-            event.preventDefault();
-            isbn = $("#isbn-value-top").val();
+        function isbnSubmitBehavior(origin, target) {
+            isbn = $(origin).val();
             if (isbn === "") {
                 return;
             }
-            $("#isbn-value-middle").val(isbn);
+            $(target).val(isbn);
             postISBN(isbn, displayBook)
+        }
+
+        $("#isbn-submit-top").click(function(event) {
+            event.preventDefault();
+            isbnSubmitBehavior("#isbn-value-top", "#isbn-value-middle")
         });
 
         $("#isbn-submit-middle").click(function(event) {
             event.preventDefault();
-            isbn = $("#isbn-value-middle").val();
-            if (isbn === "") {
-                return;
-            }
-            $("#isbn-value-top").val(isbn);
-            postISBN(isbn, displayBook)
+            isbnSubmitBehavior("#isbn-value-middle", "#isbn-value-top")
         });
 
         function drawChart(json_data) {

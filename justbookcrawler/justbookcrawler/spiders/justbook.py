@@ -24,31 +24,46 @@ class BlogSpider(scrapy.Spider):
               'mode=advanced&st=sr&ac=qr&ps=bp' % isbn
         yield scrapy.Request(url, self.parse)
 
-    def parse(self, response):
+    def book_does_not_exist(self):
+        current_book = Book.objects.get(isbn=getattr(self, 'isbn', None))
+        current_book.not_found = True
+        current_book.save()
+
+    def book_exist(self, book_temp):
 
         current_book = Book.objects.get(isbn=getattr(self, 'isbn', None))
+        current_book.title = book_temp['title']
+        current_book.cover_image = book_temp['cover']
+        current_book.editor = book_temp['editor']
+        current_book.distribution_date = book_temp['distribution']
+        current_book.not_found = False
+        current_book.save()
+
+        return current_book
+
+    def book_information_parsing(self, response):
+
         book_temp = {
             'title': '',
             'cover': '',
             'editor': '',
             'distribution': ''
         }
-
         tables = response.css("table.results-table-Logo")
+
         if not tables:
-            current_book.not_found = True
-            current_book.save()
-            return
+            return book_temp, tables, False
 
         try:
             book_temp['title'] = response.css(
                 '#bd-isbn div.attributes div')[1].css(
                 'a strong span ::text').extract_first()
         except IndexError:
-            current_book.not_found = True
-            current_book.save()
-            return
+            return book_temp, tables, False
 
+        book_temp['title'] = response.css(
+            '#bd-isbn div.attributes div')[1].css(
+            'a strong span ::text').extract_first()
         book_temp['cover'] = response.css(
             'img#coverImage ::attr(src)').extract_first()
         book_temp['editor'] = response.css(
@@ -56,16 +71,36 @@ class BlogSpider(scrapy.Spider):
         book_temp['distribution'] = response.css(
             'span.describe-isbn ::text').extract_first().split(",")[1].replace(
             " ", "")
+
         # self.logger.info('book_title: %s', book_title)
         # self.logger.info('book_cover: %s', book_cover)
         # self.logger.info('book_editor: %s', book_editor)
         # self.logger.info('book_distribution: %s', book_distribution)
-        current_book.title = book_temp['title']
-        current_book.cover_image = book_temp['cover']
-        current_book.editor = book_temp['editor']
-        current_book.distribution_date = book_temp['distribution']
-        current_book.not_found = False
-        current_book.save()
+
+        return book_temp, tables, True
+
+    def offer_creation(self, current_book, table_type, offer_temp):
+        offer = OfferItem()
+        offer['book'] = current_book
+        offer['book_condition'] = table_type
+        offer['vendor'] = offer_temp['vendor']
+        offer['shop_img'] = offer_temp['shop_img']
+        offer['shop_link'] = offer_temp['shop_link']
+        offer['country'] = offer_temp['country']
+        offer['description'] = offer_temp['description']
+        offer['price'] = offer_temp['price']
+        offer.save()
+
+    def parse(self, response):
+
+        book_temp, tables, book_exist = self.book_information_parsing(response)
+
+        if book_exist:
+            current_book = self.book_exist(book_temp)
+        else:
+            self.book_does_not_exist()
+            return
+
         table_type = "0"
         if len(tables) == 1:
             table_type = "1"
@@ -95,16 +130,7 @@ class BlogSpider(scrapy.Spider):
                         '::text').extract())
                     offer_temp['price'] = float(tds[3].css(
                         'a ::text').extract_first().replace("€", ""))
-                    offer = OfferItem()
-                    offer['book'] = current_book
-                    offer['book_condition'] = table_type
-                    offer['vendor'] = offer_temp['vendor']
-                    offer['shop_img'] = offer_temp['shop_img']
-                    offer['shop_link'] = offer_temp['shop_link']
-                    offer['country'] = offer_temp['country']
-                    offer['description'] = offer_temp['description']
-                    offer['price'] = offer_temp['price']
-                    offer.save()
+                    self.offer_creation(current_book, table_type, offer_temp)
 
                     # yield offer
 
