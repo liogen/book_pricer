@@ -61,9 +61,6 @@ class BlogSpider(scrapy.Spider):
         except IndexError:
             return book_temp, tables, False
 
-        book_temp['title'] = response.css(
-            '#bd-isbn div.attributes div')[1].css(
-            'a strong span ::text').extract_first()
         book_temp['cover'] = response.css(
             'img#coverImage ::attr(src)').extract_first()
         book_temp['editor'] = response.css(
@@ -91,6 +88,24 @@ class BlogSpider(scrapy.Spider):
         offer['price'] = offer_temp['price']
         offer.save()
 
+    def offer_info_css(self, tds, first_index, second_index, selector):
+        return tds[first_index].css('span')[second_index].css(
+            selector).extract_first()
+
+    def offer_crawl(self, current_book, table_type, offer_temp, tds):
+        if len(tds[1].css('.results-explanatory-text-Logo')) == 3:
+            offer_temp['vendor'] = self.offer_info_css(tds, 1, 0, '::text')
+            offer_temp['country'] = self.offer_info_css(tds, 1, 2, '::text')
+            offer_temp['shop_img'] = self.offer_info_css(
+                tds, 1, 1, 'a img ::attr(src)')
+            offer_temp['shop_link'] = self.offer_info_css(
+                tds, 1, 1, 'a ::attr(href)')
+        offer_temp['description'] = "<br />".join(tds[2].css(
+            '::text').extract())
+        offer_temp['price'] = float(tds[3].css(
+            'a ::text').extract_first().replace("€", ""))
+        self.offer_creation(current_book, table_type, offer_temp)
+
     def parse(self, response):
 
         book_temp, tables, book_exist = self.book_information_parsing(response)
@@ -117,21 +132,6 @@ class BlogSpider(scrapy.Spider):
                 }
                 if len(tds) == 4:
                     # self.logger.info(tds[1])
-                    if len(tds[1].css('.results-explanatory-text-Logo')) == 3:
-                        offer_temp['vendor'] = tds[1].css('span')[0].css(
-                            '::text').extract_first()
-                        offer_temp['country'] = tds[1].css('span')[2].css(
-                            '::text').extract_first()
-                        offer_temp['shop_img'] = tds[1].css('span')[1].css(
-                            'a img ::attr(src)').extract_first()
-                        offer_temp['shop_link'] = tds[1].css('span')[1].css(
-                            'a ::attr(href)').extract_first()
-                    offer_temp['description'] = "<br />".join(tds[2].css(
-                        '::text').extract())
-                    offer_temp['price'] = float(tds[3].css(
-                        'a ::text').extract_first().replace("€", ""))
-                    self.offer_creation(current_book, table_type, offer_temp)
-
-                    # yield offer
+                    self.offer_crawl(current_book, table_type, offer_temp, tds)
 
             table_type = "1"

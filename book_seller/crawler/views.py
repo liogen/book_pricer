@@ -22,8 +22,8 @@ SITE_NAME = 'BookPricer'
 SITE_DESCRIPTION = 'The easiest way to know the correct price of an used book'
 
 
-def price_info_creation(new_offers, used_offers):
-    prices_info = {
+def princes_info_temp():
+    return {
         'max_price': 0,
         'interval_size': 5,
         'new_prices_array': [],
@@ -32,6 +32,10 @@ def price_info_creation(new_offers, used_offers):
         'offer_mean': 0,
         'offer_stdev': 0
     }
+
+
+def price_info_creation(new_offers, used_offers):
+    prices_info = princes_info_temp()
 
     for condition in [new_offers, used_offers]:
         for offer in condition:
@@ -105,6 +109,15 @@ def offer_serialization(new_offers, used_offers):
     return new_offers_serialized, used_offers_serialized
 
 
+def lowest_price_insertion(json_response, new_offers, used_offers):
+    if new_offers:
+        json_response['lowest_new_price'] = new_offers[0].price
+    if used_offers:
+        json_response['lowest_used_price'] = used_offers[0].price
+
+    return json_response
+
+
 def get_book_information(book):
     new_offers = Offer.objects.filter(
         book=book, book_condition=Offer.NEW).order_by('price')
@@ -127,12 +140,8 @@ def get_book_information(book):
         'chart_offers': chart_offers,
         'median_offers': "%.2f" % median_offers
     }
-    if new_offers:
-        json_response['lowest_new_price'] = new_offers[0].price
-    if used_offers:
-        json_response['lowest_used_price'] = used_offers[0].price
 
-    return json_response
+    return lowest_price_insertion(json_response, new_offers, used_offers)
 
 
 class CrawlerView(View):
@@ -150,8 +159,6 @@ class CrawlerView(View):
     def post(self, request, *args, **kwargs):  # noqa
         json_response = {}
         isbn = request.POST.get('isbn', 'error')
-        LOGGER.info('request.POST: %s', request.POST)
-        LOGGER.info('isbn: %s', isbn)
         start_crawler = False
 
         if isbn not in ['error']:

@@ -7,7 +7,6 @@ jQuery(function($) {
         }
 
         function emptyBookInfo(json_book_info) {
-            console.log(json_book_info);
             if ('crawler_started' in json_book_info &&
                 json_book_info['crawler_started'] === false) {
                 book_title = 'book_title' in json_book_info ? json_book_info['book_title'] : null;
@@ -28,7 +27,6 @@ jQuery(function($) {
                 $("#book-info-tab").removeClass("hidden");
                 $("#book-offers-tab").removeClass("hidden");
                 $("#book-info-error").addClass("hidden");
-                console.log(json_book_info['chart_offers']);
                 google.charts.load('current', {'packages':['bar'], callback: function () {
                     drawChart(json_book_info['chart_offers']);
                 }});
