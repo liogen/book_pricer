@@ -14,6 +14,7 @@ PLACEHOLDER = {
     'id': 'isbn-value-top'
 }
 
+
 class TopBookForm(forms.Form):
 
     isbn = forms.CharField(

@@ -78,11 +78,11 @@ def get_chart_distribution(new_offers, used_offers):
 
     array_chart_offers = [["Price", "New offers", "Used offers"]]
 
-    for i in range(len(new_offers_array)):
+    for i, item in enumerate(new_offers_array):
         column_name = "%s-%s€" % (
             i * prices_info['interval_size'],
             (i + 1) * prices_info['interval_size'])
-        array_chart_offers.append([column_name, new_offers_array[i],
+        array_chart_offers.append([column_name, item,
                                    used_offers_array[i]])
 
     try:
@@ -120,7 +120,7 @@ def get_book_information(book):
         'book_title': book.title,
         'cover_image': book.cover_image,
         'editor': book.editor,
-        'distribution_date' :book.distribution_date,
+        'distribution_date': book.distribution_date,
         'new_offers': new_offers_json,
         'used_offers': used_offers_json,
         'total_offer_nb': len(new_offers) + len(used_offers),
@@ -150,8 +150,8 @@ class CrawlerView(View):
     def post(self, request, *args, **kwargs):  # noqa
         json_response = {}
         isbn = request.POST.get('isbn', 'error')
-        LOGGER.info('request.POST: {0}'.format(request.POST))
-        LOGGER.info('isbn: {0}'.format(isbn))
+        LOGGER.info('request.POST: %s', request.POST)
+        LOGGER.info('isbn: %s', isbn)
         start_crawler = False
 
         if isbn not in ['error']:
@@ -201,7 +201,7 @@ class ISBNInfoView(View):
 
         if book is not None and book.title is not None:
             if book.updated_at > timezone.now() + timedelta(days=-2):
-                json_response = get_book_information(book, json_response)
+                json_response = get_book_information(book)
                 crawler_started = False
 
         json_response['crawler_started'] = crawler_started

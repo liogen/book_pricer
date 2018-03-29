@@ -6,14 +6,14 @@
 
 import json
 import logging
-from behave import given, when, then  # pylint: disable=E0611
+from behave import when, then  # pylint: disable=E0611
 from django.test import Client
-from crawler.models import Book, Offer
+from crawler.models import Book
 
 
 LOGGER = logging.getLogger("book_seller")
 KEY_ISBN = 'isbn'
-KEY_TITLE= 'title'
+KEY_TITLE = 'title'
 KEY_EDITOR = 'editor'
 KEY_CRAWLER_STARTED = 'crawler_started'
 KEY_DISTRIBUTION_DATE = 'distribution_date'
@@ -24,6 +24,7 @@ BOOK_INFO = {
     KEY_EDITOR: 'Les Arènes',
     KEY_DISTRIBUTION_DATE: '2014'
 }
+
 
 @when("I ask for an ISBN book to crawl")
 def run_backup_command(context):
@@ -43,4 +44,4 @@ def run_backup_command(context):
 def no_data_expected(context):
     """No data expected"""
     # pylint: disable=unused-argument
-    book = Book.objects.get(isbn=BOOK_INFO[KEY_ISBN])
+    Book.objects.get(isbn=BOOK_INFO[KEY_ISBN])
