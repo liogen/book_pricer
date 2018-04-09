@@ -82,9 +82,9 @@ Supervisor configuration and run
 .. code-block:: bash
 
     $ sudo cp supervisor/* /etc/supervisor.conf.d/
-    $ sudo reread
-    $ sudo add book_seller
-    $ sudo add justbookcrawler
+    $ sudo supervisorctl reread
+    $ sudo supervisorctl add book_seller
+    $ sudo supervisorctl add justbookcrawler
     $ sudo supervisorctl start book_seller
     $ sudo supervisorctl start justbookcrawler
     $ tail -f /tmp/book_seller.log
