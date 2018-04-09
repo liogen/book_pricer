@@ -11,8 +11,9 @@ before_script:
   - mkdir /tmp/timevortex
 script:
   - python --version
+  - cd book_seller
   - python manage.py migrate --settings=timevortex.settings.local
-  - scrapyd
+  - cd ..
   - scrapyd-deploy -l
   - scrapyd-deploy default -p justbookcrawler
   - sudo cp supervisor/* /etc/supervisor.conf.d/
@@ -24,5 +25,6 @@ script:
   - tail -f /tmp/book_seller.log
   - flake8 --exclude "justbookcrawler/build/"
   - prospector -F
+  - cd book_seller
   - coverage run --source='.' manage.py behave && coverage report -m
 after_success: coveralls
