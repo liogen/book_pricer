@@ -81,7 +81,8 @@ Supervisor configuration and run
 
 .. code-block:: bash
 
-    $ sudo cp supervisor/* /etc/supervisor.conf.d/
+    $ sudo cp supervisor/book_seller.conf /etc/supervisor.conf.d/
+    $ sudo cp supervisor/justbookcrawler.conf /etc/supervisor.conf.d/
     $ sudo supervisorctl reread
     $ sudo supervisorctl add book_seller
     $ sudo supervisorctl add justbookcrawler
@@ -95,7 +96,6 @@ Scrapy configuration
 .. code-block:: bash
 
     $ cd ..
-    $ pip install python-scrapyd-api scrapyd 'git+https://github.com/scrapy/scrapyd-client.git@1.1.0dev'
     $ cd justbookcrawler
     $ scrapyd-deploy -l
     $ scrapyd-deploy default -p justbookcrawler

@@ -12,13 +12,13 @@ script:
   - cd book_seller
   - python manage.py migrate --settings=book_seller.settings.test
   - cd ..
-  - sudo cp supervisor/* /etc/supervisor/conf.d/
+  - sudo cp supervisor/*_travis.conf /etc/supervisor/conf.d/
   - sudo supervisorctl reread
   - sudo supervisorctl add book_seller
   - sudo supervisorctl add justbookcrawler
   - sudo supervisorctl start book_seller
   - sudo supervisorctl start justbookcrawler
-  - cd ../justbookcrawler
+  - cd justbookcrawler
   - scrapyd-deploy -l
   - scrapyd-deploy default -p justbookcrawler
   - tail -n 50 /tmp/book_seller.log
