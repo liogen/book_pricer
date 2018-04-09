@@ -17,11 +17,14 @@ script:
   - sudo supervisorctl add book_seller
   - sudo supervisorctl add justbookcrawler
   - sudo supervisorctl start book_seller
+  - sudo supervisorctl tail -n 30 book_seller
   - sudo supervisorctl start justbookcrawler
+  - sudo supervisorctl tail -n 30 justbookcrawler
   - cd justbookcrawler
   - scrapyd-deploy -l
   - scrapyd-deploy default -p justbookcrawler
   - tail -n 50 /tmp/book_seller.log
+  - cd ..
   - flake8 --exclude "justbookcrawler/build/"
   - prospector -F
   - cd book_seller
