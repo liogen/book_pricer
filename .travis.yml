@@ -8,6 +8,7 @@ install:
 before_script:
   - mkdir /tmp/timevortex
 script:
+  - pwd
   - python --version
   - cd book_seller
   - python manage.py migrate --settings=book_seller.settings.test

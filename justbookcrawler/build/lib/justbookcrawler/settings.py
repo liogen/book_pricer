@@ -13,9 +13,12 @@ import os
 import sys
 import django
 
-
-sys.path.append('/vagrant/book_seller/')
-os.environ['DJANGO_SETTINGS_MODULE'] = 'book_seller.settings.prod'
+if os.path.exists("/home/travis"):
+    sys.path.append('/home/travis/book_seller/')
+    os.environ['DJANGO_SETTINGS_MODULE'] = 'book_seller.settings.test'
+else:
+    sys.path.append('/vagrant/book_sellere/')
+    os.environ['DJANGO_SETTINGS_MODULE'] = 'book_seller.settings.prod'
 
 django.setup()
 
