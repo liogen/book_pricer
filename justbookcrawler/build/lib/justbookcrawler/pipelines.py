@@ -7,5 +7,5 @@
 
 
 class JustbookcrawlerPipeline(object):
-    def process_item(self, item, spider):
+    def process_item(self, item, spider):  # noqa
         return item

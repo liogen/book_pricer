@@ -76,17 +76,6 @@ Django configuration
     $ python manage.py migrate --settings=book_seller.settings.prod
     $ python manage.py createsuperuser (book_seller / book_seller_Admin)
 
-Scrapy configuration
-~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: bash
-
-    $ cd ..
-    $ pip install python-scrapyd-api scrapyd 'git+https://github.com/scrapy/scrapyd-client.git@1.1.0dev'
-    $ cd justbookcrawler
-    $ scrapyd-deploy -l
-    $ scrapyd-deploy default -p justbookcrawler
-
 Supervisor configuration and run
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -99,6 +88,17 @@ Supervisor configuration and run
     $ sudo supervisorctl start book_seller
     $ sudo supervisorctl start justbookcrawler
     $ tail -f /tmp/book_seller.log
+
+Scrapy configuration
+~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+    $ cd ..
+    $ pip install python-scrapyd-api scrapyd 'git+https://github.com/scrapy/scrapyd-client.git@1.1.0dev'
+    $ cd justbookcrawler
+    $ scrapyd-deploy -l
+    $ scrapyd-deploy default -p justbookcrawler
 
 Contribute
 ----------
