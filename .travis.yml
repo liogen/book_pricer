@@ -1,6 +1,5 @@
 language: python
 python:
-  - "3.4"
   - "3.5"
 before_install:
   - sudo apt-get update
@@ -12,10 +11,11 @@ before_script:
 script:
   - python --version
   - cd book_seller
-  - python manage.py migrate --settings=timevortex.settings.local
-  - cd ..
+  - python manage.py migrate --settings=book_seller.settings.test
+  - cd ../justbookcrawler
   - scrapyd-deploy -l
   - scrapyd-deploy default -p justbookcrawler
+  - cd ..
   - sudo cp supervisor/* /etc/supervisor.conf.d/
   - sudo reread
   - sudo add book_seller
@@ -26,5 +26,5 @@ script:
   - flake8 --exclude "justbookcrawler/build/"
   - prospector -F
   - cd book_seller
-  - coverage run --source='.' manage.py behave && coverage report -m
+  - coverage run --source='.' manage.py behave --settings=book_seller.settings.test && coverage report -m
 after_success: coveralls

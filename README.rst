@@ -72,7 +72,8 @@ Django configuration
 
 .. code-block:: bash
 
-    $ python manage.py migrate
+    $ cd book_seller
+    $ python manage.py migrate --settings=book_seller.settings.prod
     $ python manage.py createsuperuser (book_seller / book_seller_Admin)
 
 Scrapy configuration
@@ -80,8 +81,9 @@ Scrapy configuration
 
 .. code-block:: bash
 
+    $ cd ..
     $ pip install python-scrapyd-api scrapyd 'git+https://github.com/scrapy/scrapyd-client.git@1.1.0dev'
-    $ scrapyd
+    $ cd justbookcrawler
     $ scrapyd-deploy -l
     $ scrapyd-deploy default -p justbookcrawler
 
@@ -110,7 +112,7 @@ To test the quality, run this commands :
     $ pip install flake8 prospector django_nose behave_django coverage
     $ flake8 --exclude "justbookcrawler/build/"
     $ prospector -F
-    $ coverage run --source='.' manage.py behave && coverage report -m
+    $ coverage run --source='.' manage.py behave --settings=book_seller.settings.test && coverage report -m
 
 To fix a bug, open an issue in github and submit a pull request.
 
