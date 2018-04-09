@@ -14,7 +14,7 @@ import sys
 import django
 
 if os.path.exists("/home/travis"):
-    sys.path.append('/home/travis/book_seller/')
+    sys.path.append('/home/travis/build/liogen/book_pricer/book_seller/')
     os.environ['DJANGO_SETTINGS_MODULE'] = 'book_seller.settings.test'
 else:
     sys.path.append('/vagrant/book_seller/')
