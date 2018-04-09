@@ -21,7 +21,7 @@ script:
   - sudo supervisorctl start justbookcrawler
   - sudo supervisorctl tail -n 30 justbookcrawler
   - cd book_seller
-  - python manage.py runserver --settings=book_seller.settings.test
+  - nohup python manage.py runserver --settings=book_seller.settings.test &
   - cd ../justbookcrawler
   - nohup scrapyd &
   - scrapyd-deploy -l
