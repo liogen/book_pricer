@@ -26,14 +26,45 @@ User interface
 
 In this application, you just have to enter your book's ISBN and you will get a price distribution of the news and used offers available on the Web. The last step for you is to pick up the correct price according to the price distribution and sell on your preferred website.
 
-TODO: add pictures
+.. image:: docs/book_pricer_1.png
+   :width: 200px
+   :height: 100px
+   :alt: home page
+
+.. image:: docs/book_pricer_2.png
+   :width: 200px
+   :height: 100px
+   :alt: book information
+
+.. image:: docs/book_pricer_3.png
+   :width: 200px
+   :height: 100px
+   :alt: book price distribution
+
+.. image:: docs/book_pricer_4.png
+   :width: 200px
+   :height: 100px
+   :alt: New book recently searched
 
 Admin presentation
 ~~~~~~~~~~~~~~~~~~
 
 To see the datamodel and the data in DB, go to localhost:8080/admin (book_seller / book_seller_Admin).
 
-TODO: add pictures
+.. image:: docs/book_pricer_5.png
+   :width: 200px
+   :height: 100px
+   :alt: admin home page
+
+.. image:: docs/book_pricer_6.png
+   :width: 200px
+   :height: 100px
+   :alt: admin books
+
+.. image:: docs/book_pricer_7.png
+   :width: 200px
+   :height: 100px
+   :alt: admin offers
 
 Installation guide
 ------------------
@@ -112,16 +143,8 @@ To test the quality, run this commands :
     $ pip install flake8 prospector django_nose behave_django coverage
     $ flake8 --exclude "justbookcrawler/build/"
     $ prospector -F
+    $ cd book_seller/
     $ coverage run --source='.' manage.py behave --settings=book_seller.settings.test && coverage report -m
     $ mv .coverage ../
 
 To fix a bug, open an issue in github and submit a pull request.
-
-Todo
-----
-
-* Integrate project on coveralls
-* Correct code climate error
-* Fix crawler problem
-* Write Readme
-

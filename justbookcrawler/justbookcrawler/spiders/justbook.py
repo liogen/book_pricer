@@ -18,10 +18,10 @@ class BlogSpider(scrapy.Spider):
 
     def start_requests(self):
         isbn = getattr(self, 'isbn', None)
-        url = 'http://www.justbooks.fr/search/?author=&title=&lang=fr&' \
+        url = 'https://www.justbooks.fr/search/?author=&title=&lang=fr&' \
               'new_used=*&destination=fr&currency=EUR&binding=*&isbn=%s&' \
               'keywords=&minprice=&maxprice=&min_year=&max_year=&' \
-              'mode=advanced&st=sr&ac=qr&ps=bp' % isbn
+              'mode=advanced&st=sr&ac=qr' % isbn
         yield scrapy.Request(url, self.parse)
 
     def book_does_not_exist(self):
@@ -50,7 +50,6 @@ class BlogSpider(scrapy.Spider):
             'distribution': ''
         }
         tables = response.css("table.results-table-Logo")
-
         if not tables:
             return book_temp, tables, False
 
@@ -103,7 +102,7 @@ class BlogSpider(scrapy.Spider):
         offer_temp['description'] = "<br />".join(tds[2].css(
             '::text').extract())
         offer_temp['price'] = float(tds[3].css(
-            'a ::text').extract_first().replace("€", ""))
+            'a ::text').extract_first().replace("€", "").replace(",", "."))
         self.offer_creation(current_book, table_type, offer_temp)
 
     def parse(self, response):
