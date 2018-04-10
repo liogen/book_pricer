@@ -5,6 +5,7 @@ install:
   - sudo apt-get update
   - sudo apt-get install sqlite3 supervisor
   - pip install -r requirements.txt
+  - pip install coveralls
 before_script:
   - mkdir /tmp/timevortex
 script:
@@ -24,4 +25,6 @@ script:
   - cd book_seller
   - coverage run --source='.' manage.py behave --settings=book_seller.settings.test && coverage report -m
   - mv .coverage ../
+  - cd ../
+  - coveralls
 after_success: coveralls
