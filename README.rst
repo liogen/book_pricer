@@ -113,13 +113,13 @@ To test the quality, run this commands :
     $ flake8 --exclude "justbookcrawler/build/"
     $ prospector -F
     $ coverage run --source='.' manage.py behave --settings=book_seller.settings.test && coverage report -m
+    $ mv .coverage ../
 
 To fix a bug, open an issue in github and submit a pull request.
 
 Todo
 ----
 
-* Integrate project on travis
 * Integrate project on coveralls
 * Correct code climate error
 * Fix crawler problem

@@ -23,4 +23,5 @@ script:
   - prospector -F
   - cd book_seller
   - coverage run --source='.' manage.py behave --settings=book_seller.settings.test && coverage report -m
+  - mv .coverage ../
 after_success: coveralls
